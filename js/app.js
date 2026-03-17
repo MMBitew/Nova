@@ -81,7 +81,15 @@ const NovaApp = {
                         ` : ''}
                     </div>
 
-                    <!-- More skills coming soon -->
+                    <div class="skill-card" onclick="NovaRouter.navigate('note-master-refined')" style="border: 2px solid var(--primary-color);">
+                        <div class="skill-icon">🎯</div>
+                        <div class="skill-name">Note Master Refined</div>
+                        <div class="skill-desc">NEW: Smart daily practice</div>
+                        <div style="margin-top: 12px;">
+                            <span style="background: var(--success-color); color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; display: inline-block;">Beta</span>
+                        </div>
+                    </div>
+
                     <div class="skill-card" style="opacity: 0.5; cursor: not-allowed;">
                         <div class="skill-icon">📖</div>
                         <div class="skill-name">Reading Master</div>
@@ -125,7 +133,6 @@ const NovaApp = {
             <div class="settings-screen" style="max-width: 600px; margin: 0 auto;">
                 <h1 style="margin-bottom: 32px;">Settings</h1>
 
-                <!-- Theme Selection -->
                 <div class="setting-section" style="background: var(--surface-color); padding: 24px; border-radius: 16px; margin-bottom: 20px;">
                     <h3 style="margin-bottom: 16px;">Choose Theme</h3>
                     <div class="theme-selector">
@@ -148,7 +155,6 @@ const NovaApp = {
                     </div>
                 </div>
 
-                <!-- Data Management -->
                 <div class="setting-section" style="background: var(--surface-color); padding: 24px; border-radius: 16px; margin-bottom: 20px;">
                     <h3 style="margin-bottom: 16px;">Data</h3>
                     <button class="btn btn-secondary" onclick="NovaApp.exportData()" style="margin-right: 8px;">
@@ -159,7 +165,6 @@ const NovaApp = {
                     </button>
                 </div>
 
-                <!-- About -->
                 <div class="setting-section" style="background: var(--surface-color); padding: 24px; border-radius: 16px;">
                     <h3 style="margin-bottom: 16px;">About Nova</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 12px;">
@@ -186,7 +191,7 @@ const NovaApp = {
     changeTheme(theme) {
         NovaState.setTheme(theme);
         NovaToast.success('Theme changed!');
-        this.showSettings(); // Refresh to show active theme
+        this.showSettings();
     },
 
     /**
