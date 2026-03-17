@@ -23,96 +23,108 @@ const NovaApp = {
             this.showHome();
         }
     },
-
-    /**
-     * Show home screen with skills
-     */
-    showHome() {
-        const container = document.getElementById('main-content');
-        
-        // Get stats
-        const userXP = NovaState.state.user.xp;
-        const userLevel = NovaState.state.user.level;
-        const userStreak = NovaState.state.user.streak;
-        
-        // Get Note Master progress
-        const noteProgress = NovaProgress.getCompletionPercentage('note-master', 60);
-        
-        container.innerHTML = `
-            <div class="home-screen">
-                <div class="welcome-section" style="text-align: center; margin-bottom: 40px;">
-                    <h1 class="gradient-text" style="font-size: 48px; margin-bottom: 8px;">
-                        ✨ Nova
-                    </h1>
-                    <p style="font-size: 20px; color: var(--text-secondary);">
-                        Learn at your own pace
-                    </p>
-                    <div style="margin-top: 20px;">
-                        <div class="stats" style="display: inline-flex; gap: 20px; justify-content: center;">
-                            <div class="stat-item">
-                                Level ${userLevel}
-                            </div>
-                            <div class="stat-item">
-                                ${userXP} XP
-                            </div>
-                            ${userStreak > 0 ? `
-                            <div class="stat-item">
-                                🔥 ${userStreak} day${userStreak > 1 ? 's' : ''}
-                            </div>
-                            ` : ''}
+/**
+ * Show home screen with skills
+ */
+showHome() {
+    const container = document.getElementById('main-content');
+    
+    // Get stats
+    const userXP = NovaState.state.user.xp;
+    const userLevel = NovaState.state.user.level;
+    const userStreak = NovaState.state.user.streak;
+    
+    // Get Note Master progress
+    const noteProgress = NovaProgress.getCompletionPercentage('note-master', 60);
+    
+    container.innerHTML = `
+        <div class="home-screen">
+            <div class="welcome-section" style="text-align: center; margin-bottom: 40px;">
+                <h1 class="gradient-text" style="font-size: 48px; margin-bottom: 8px;">
+                    ✨ Nova
+                </h1>
+                <p style="font-size: 20px; color: var(--text-secondary);">
+                    Learn at your own pace
+                </p>
+                <div style="margin-top: 20px;">
+                    <div class="stats" style="display: inline-flex; gap: 20px; justify-content: center;">
+                        <div class="stat-item">
+                            Level ${userLevel}
                         </div>
-                    </div>
-                </div>
-
-                <div class="skills-grid">
-                    <div class="skill-card" onclick="NovaRouter.navigate('note-master')">
-                        <div class="skill-icon">✍️</div>
-                        <div class="skill-name">Note Master</div>
-                        <div class="skill-desc">Master note-taking skills</div>
-                        ${noteProgress > 0 ? `
-                        <div style="margin-top: 12px;">
-                            <div style="height: 4px; background: var(--border-color); border-radius: 2px; overflow: hidden;">
-                                <div style="height: 100%; width: ${noteProgress}%; background: var(--primary-color); transition: width 0.3s ease;"></div>
-                            </div>
-                            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">
-                                ${noteProgress}% complete
-                            </div>
+                        <div class="stat-item">
+                            ${userXP} XP
+                        </div>
+                        ${userStreak > 0 ? `
+                        <div class="stat-item">
+                            🔥 ${userStreak} day${userStreak > 1 ? 's' : ''}
                         </div>
                         ` : ''}
                     </div>
-
-                    <!-- More skills coming soon -->
-                    <div class="skill-card" style="opacity: 0.5; cursor: not-allowed;">
-                        <div class="skill-icon">📖</div>
-                        <div class="skill-name">Reading Master</div>
-                        <div class="skill-desc">Coming soon</div>
-                    </div>
-
-                    <div class="skill-card" style="opacity: 0.5; cursor: not-allowed;">
-                        <div class="skill-icon">💰</div>
-                        <div class="skill-name">Money Master</div>
-                        <div class="skill-desc">Coming soon</div>
-                    </div>
-
-                    <div class="skill-card" style="opacity: 0.5; cursor: not-allowed;">
-                        <div class="skill-icon">✏️</div>
-                        <div class="skill-name">Writing Master</div>
-                        <div class="skill-desc">Coming soon</div>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 40px;">
-                    <button class="btn btn-secondary" onclick="NovaApp.showSettings()">
-                        ⚙️ Settings
-                    </button>
                 </div>
             </div>
-        `;
 
-        // Hide voice button on home
-        const voiceBtn = document.getElementById('voiceBtn');
-        if (voiceBtn) voiceBtn.classList.add('hidden');
-    },
+            <div class="skills-grid">
+                <!-- ORIGINAL Note Master -->
+                <div class="skill-card" onclick="NovaRouter.navigate('note-master')">
+                    <div class="skill-icon">✍️</div>
+                    <div class="skill-name">Note Master</div>
+                    <div class="skill-desc">Master note-taking skills</div>
+                    ${noteProgress > 0 ? `
+                    <div style="margin-top: 12px;">
+                        <div style="height: 4px; background: var(--border-color); border-radius: 2px; overflow: hidden;">
+                            <div style="height: 100%; width: ${noteProgress}%; background: var(--primary-color); transition: width 0.3s ease;"></div>
+                        </div>
+                        <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">
+                            ${noteProgress}% complete
+                        </div>
+                    </div>
+                    ` : ''}
+                </div>
+
+                <!-- NEW: REFINED Note Master -->
+                <div class="skill-card" onclick="NovaRouter.navigate('note-master-refined')" style="border: 2px solid var(--primary-color);">
+                    <div class="skill-icon">🎯</div>
+                    <div class="skill-name">Note Master Refined</div>
+                    <div class="skill-desc">NEW: Smart daily practice</div>
+                    <div style="margin-top: 12px;">
+                        <span style="background: var(--success-color); color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; display: inline-block;">
+                            Beta
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Coming soon skills -->
+                <div class="skill-card" style="opacity: 0.5; cursor: not-allowed;">
+                    <div class="skill-icon">📖</div>
+                    <div class="skill-name">Reading Master</div>
+                    <div class="skill-desc">Coming soon</div>
+                </div>
+
+                <div class="skill-card" style="opacity: 0.5; cursor: not-allowed;">
+                    <div class="skill-icon">💰</div>
+                    <div class="skill-name">Money Master</div>
+                    <div class="skill-desc">Coming soon</div>
+                </div>
+
+                <div class="skill-card" style="opacity: 0.5; cursor: not-allowed;">
+                    <div class="skill-icon">✏️</div>
+                    <div class="skill-name">Writing Master</div>
+                    <div class="skill-desc">Coming soon</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn btn-secondary" onclick="NovaApp.showSettings()">
+                    ⚙️ Settings
+                </button>
+            </div>
+        </div>
+    `;
+
+    // Hide voice button on home
+    const voiceBtn = document.getElementById('voiceBtn');
+    if (voiceBtn) voiceBtn.classList.add('hidden');
+}
 
     /**
      * Show settings screen
