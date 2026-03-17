@@ -1,0 +1,69 @@
+{
+  "lessonId": "L04-refined",
+  "version": "2.0",
+  "conceptId": "bullets",
+  "metadata": {
+    "title": "Bullet Lists",
+    "subtitle": "Organize with bullets",
+    "icon": "•",
+    "estimatedTime": "5-8 min",
+    "difficulty": "adaptive",
+    "type": "refined-lesson"
+  },
+
+  "introduce": {
+    "stepId": "introduce",
+    "type": "visual-intro",
+    "maxDuration": 30,
+    "content": {
+      "icon": "•",
+      "title": "Bullets Organize",
+      "subtitle": "One bullet = one idea",
+      "example": {
+        "messy": "Need eggs milk bread butter",
+        "bullets": "• eggs\n• milk\n• bread\n• butter",
+        "visual": "before-after"
+      }
+    }
+  },
+
+  "questions": [
+    {
+      "id": "q1",
+      "difficulty": 1,
+      "type": "identify-format",
+      "prompt": "Which is easier to read?",
+      "options": [
+        {"text": "Cats are soft they purr they are cute", "format": "paragraph", "isCorrect": false},
+        {"text": "Cats:\n• soft\n• purr\n• cute", "format": "bullets", "isCorrect": true}
+      ]
+    },
+    {
+      "id": "q2",
+      "difficulty": 2,
+      "type": "convert-to-bullets",
+      "prompt": "Turn this into bullets",
+      "context": {
+        "text": "Water cycle has evaporation condensation and precipitation"
+      },
+      "correctAnswer": "Water cycle:\n• evaporation\n• condensation\n• precipitation",
+      "userInput": "drag-words-to-bullets"
+    },
+    {
+      "id": "q3",
+      "difficulty": 2,
+      "type": "convert-to-bullets",
+      "prompt": "Make bullets from this",
+      "context": {
+        "text": "Exercise strengthens muscles improves mood helps sleep"
+      }
+    }
+  ],
+
+  "completion": {
+    "mastery": {
+      "message": "Bullets mastered! •⭐",
+      "xp": 30
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "lessonId": "L03-refined",
+  "version": "2.0",
+  "conceptId": "short-notes",
+  "metadata": {
+    "title": "Short Notes",
+    "subtitle": "Shorter = better",
+    "icon": "✂️",
+    "estimatedTime": "5-8 min",
+    "difficulty": "adaptive",
+    "type": "refined-lesson"
+  },
+
+  "introduce": {
+    "stepId": "introduce",
+    "type": "visual-intro",
+    "maxDuration": 30,
+    "content": {
+      "icon": "✂️",
+      "title": "Short Notes Win",
+      "subtitle": "Write less, remember more",
+      "example": {
+        "long": "The Pacific Ocean is the largest ocean on Earth",
+        "short": "Pacific = largest ocean",
+        "visual": "comparison"
+      },
+      "audio": "Good notes are short. Write only what matters."
+    }
+  },
+
+  "questions": [
+    {
+      "id": "q1",
+      "difficulty": 1,
+      "type": "choose-shortest",
+      "prompt": "Which note is best?",
+      "context": {
+        "sentence": "Dogs are popular pets"
+      },
+      "options": [
+        {"text": "Dogs are popular pets", "length": "same", "isCorrect": false},
+        {"text": "Dogs = popular pets", "length": "short", "isCorrect": true},
+        {"text": "dogs", "length": "too-short", "isCorrect": false}
+      ],
+      "feedback": {
+        "correct": "Yes! Short but complete 🎯",
+        "incorrect": "Good notes are shorter than the original"
+      }
+    },
+    {
+      "id": "q2",
+      "difficulty": 2,
+      "type": "choose-shortest",
+      "prompt": "Which note is best?",
+      "context": {
+        "sentence": "The Amazon rainforest produces 20% of the world's oxygen"
+      },
+      "options": [
+        {"text": "Amazon rainforest produces 20% oxygen", "isCorrect": false},
+        {"text": "Amazon → 20% oxygen", "isCorrect": true},
+        {"text": "20%", "isCorrect": false}
+      ]
+    },
+    {
+      "id": "q3",
+      "difficulty": 2,
+      "type": "choose-shortest",
+      "prompt": "Which note is best?",
+      "context": {
+        "sentence": "Photosynthesis uses sunlight to make energy for plants"
+      },
+      "options": [
+        {"text": "Photosynthesis uses sunlight to make energy", "isCorrect": false},
+        {"text": "Photosynthesis = plants make energy from sunlight", "isCorrect": false},
+        {"text": "Photosynthesis: sunlight → energy", "isCorrect": true}
+      ]
+    }
+  ],
+
+  "completion": {
+    "mastery": {
+      "message": "Short notes mastered! ✂️⭐",
+      "xp": 30,
+      "review": "2-days"
+    }
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "skillId": "note-master",
+  "skillName": "Note Master",
+  "skillIcon": "✍️",
+  "skillTagline": "Learn faster",
+  "skillDescription": "Master note-taking from foundation to real-world mastery",
+  
+  "flowType": "linear-guided",
+  "autoAdvance": true,
+  "showProgress": true,
+  "hideMenu": true,
+  
+  "progression": {
+    "core": {
+      "id": "core-60",
+      "name": "Core Path",
+      "description": "Foundation → Competence",
+      "totalInteractions": 60,
+      "estimatedTime": "2 hours",
+      "unlocked": true,
+      "lessons": 15,
+      "practices": 30,
+      "reviews": 10,
+      "challenges": 5,
+      "navigationStyle": "auto-advance"
+    },
+    "bonus": {
+      "id": "bonus-90",
+      "name": "Master Level",
+      "description": "Competence → Mastery",
+      "totalInteractions": 90,
+      "estimatedTime": "3 hours",
+      "unlocked": false,
+      "unlocksAfter": "core-60",
+      "lessons": 10,
+      "practices": 60,
+      "reviews": 10,
+      "challenges": 10
+    }
+  },
+
+  "userExperience": {
+    "entryPoint": "auto-resume",
+    "resumeBehavior": "last-incomplete",
+    "completionBehavior": "auto-next",
+    "menuAccess": "progress-only",
+    "backButton": "always-visible",
+    "skipOption": false,
+    "flowDescription": "One lesson at a time, guided all the way"
+  },
+
+  "navigationRules": {
+    "onSkillOpen": "resume-or-start",
+    "onLessonComplete": "show-practice-or-next",
+    "onPracticeComplete": "auto-next-or-review",
+    "onReviewComplete": "celebrate-then-next-block",
+    "onBlockComplete": "celebration-then-continue",
+    "onChallengeComplete": "next-challenge-or-finish"
+  },
+
+  "sequence": [
+    {"type": "lesson", "id": "L01", "auto": true},
+    {"type": "practice", "id": "P01A", "auto": true},
+    {"type": "practice", "id": "P01B", "auto": true},
+    {"type": "lesson", "id": "L02", "auto": true},
+    {"type": "practice", "id": "P02A", "auto": true},
+    {"type": "practice", "id": "P02B", "auto": true},
+    {"type": "lesson", "id": "L03", "auto": true},
+    {"type": "practice", "id": "P03A", "auto": true},
+    {"type": "practice", "id": "P03B", "auto": true},
+    {"type": "review", "id": "R01", "milestone": true},
+    {"type": "lesson", "id": "L04", "auto": true},
+    {"type": "practice", "id": "P04A", "auto": true},
+    {"type": "practice", "id": "P04B", "auto": true},
+    {"type": "lesson", "id": "L05", "auto": true},
+    {"type": "practice", "id": "P05A", "auto": true},
+    {"type": "practice", "id": "P05B", "auto": true},
+    {"type": "lesson", "id": "L06", "auto": true},
+    {"type": "practice", "id": "P06A", "auto": true},
+    {"type": "practice", "id": "P06B", "auto": true},
+    {"type": "lesson", "id": "L07", "auto": true},
+    {"type": "practice", "id": "P07A", "auto": true},
+    {"type": "practice", "id": "P07B", "auto": true},
+    {"type": "review", "id": "R02", "milestone": true},
+    {"type": "lesson", "id": "L08", "auto": true},
+    {"type": "practice", "id": "P08A", "auto": true},
+    {"type": "practice", "id": "P08B", "auto": true},
+    {"type": "lesson", "id": "L09", "auto": true},
+    {"type": "practice", "id": "P09A", "auto": true},
+    {"type": "practice", "id": "P09B", "auto": true},
+    {"type": "lesson", "id": "L10", "auto": true},
+    {"type": "practice", "id": "P10A", "auto": true},
+    {"type": "practice", "id": "P10B", "auto": true},
+    {"type": "review", "id": "R03", "milestone": true},
+    {"type": "lesson", "id": "L11", "auto": true},
+    {"type": "practice", "id": "P11A", "auto": true},
+    {"type": "practice", "id": "P11B", "auto": true},
+    {"type": "lesson", "id": "L12", "auto": true},
+    {"type": "practice", "id": "P12A", "auto": true},
+    {"type": "practice", "id": "P12B", "auto": true},
+    {"type": "lesson", "id": "L13", "auto": true},
+    {"type": "practice", "id": "P13A", "auto": true},
+    {"type": "practice", "id": "P13B", "auto": true},
+    {"type": "review", "id": "R04", "milestone": true},
+    {"type": "lesson", "id": "L14", "auto": true},
+    {"type": "practice", "id": "P14A", "auto": true},
+    {"type": "practice", "id": "P14B", "auto": true},
+    {"type": "lesson", "id": "L15", "auto": true},
+    {"type": "practice", "id": "P15A", "auto": true},
+    {"type": "practice", "id": "P15B", "auto": true},
+    {"type": "review", "id": "R05", "milestone": true},
+    {"type": "review", "id": "R06", "milestone": false},
+    {"type": "review", "id": "R07", "milestone": false},
+    {"type": "review", "id": "R08", "milestone": false},
+    {"type": "review", "id": "R09", "milestone": true},
+    {"type": "review", "id": "R10", "milestone": false},
+    {"type": "challenge", "id": "C01", "milestone": true},
+    {"type": "challenge", "id": "C02", "milestone": true},
+    {"type": "challenge", "id": "C03", "milestone": true},
+    {"type": "challenge", "id": "C04", "milestone": true},
+    {"type": "challenge", "id": "C05", "milestone": true, "final": true}
+  ],
+
+  "progressDisplay": {
+    "type": "linear-bar",
+    "showCurrent": true,
+    "showTotal": true,
+    "showNext": true,
+    "format": "Step {current} of {total}",
+    "celebrateEvery": 5
+  },
+
+  "blocks": [
+    {
+      "id": "foundation",
+      "name": "Foundation",
+      "icon": "🏗️",
+      "description": "Why notes work and what to write down",
+      "order": 1,
+      "lessons": ["L01", "L02", "L03"],
+      "color": "#3b82f6",
+      "displayInMenu": false
+    },
+    {
+      "id": "writing",
+      "name": "Writing",
+      "icon": "✏️",
+      "description": "How to write notes efficiently",
+      "order": 2,
+      "lessons": ["L04", "L05", "L06", "L07"],
+      "color": "#58cc02",
+      "displayInMenu": false
+    },
+    {
+      "id": "visual",
+      "name": "Visual",
+      "icon": "🎨",
+      "description": "Organize notes visually",
+      "order": 3,
+      "lessons": ["L08", "L09", "L10"],
+      "color": "#ff9500",
+      "displayInMenu": false
+    },
+    {
+      "id": "understanding",
+      "name": "Understanding",
+      "icon": "🧠",
+      "description": "Use notes to learn better",
+      "order": 4,
+      "lessons": ["L11", "L12", "L13"],
+      "color": "#d53f8c",
+      "displayInMenu": false
+    },
+    {
+      "id": "reallife",
+      "name": "Real Life",
+      "icon": "🌍",
+      "description": "Take notes in real situations",
+      "order": 5,
+      "lessons": ["L14", "L15"],
+      "color": "#8b5cf6",
+      "displayInMenu": false
+    }
+  ],
+
+  "lessonMap": {
+    "L01": "why-notes-work",
+    "L02": "listen-for-what-matters",
+    "L03": "keywords-vs-filler",
+    "L04": "short-notes-win",
+    "L05": "bullet-power",
+    "L06": "number-when-steps",
+    "L07": "group-similar-stuff",
+    "L08": "headings-help",
+    "L09": "symbols-save-time",
+    "L10": "boxes-and-circles",
+    "L11": "main-idea-vs-details",
+    "L12": "turn-notes-to-questions",
+    "L13": "notes-as-study-tool",
+    "L14": "notes-from-video",
+    "L15": "notes-from-talk"
+  },
+
+  "xpStructure": {
+    "lesson": 20,
+    "practice": 10,
+    "review": 15,
+    "challenge": 50,
+    "bonus": {
+      "lesson": 30,
+      "practice": 15,
+      "review": 20,
+      "challenge": 100
+    }
+  },
+
+  "unlockRules": {
+    "sequential": true,
+    "strictOrder": true,
+    "noSkipping": true,
+    "autoResume": true
+  }
+}

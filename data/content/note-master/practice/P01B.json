@@ -1,0 +1,87 @@
+{
+  "practiceId": "P01B",
+  "lessonId": "L01",
+  "title": "When to Take Notes",
+  "type": "scenario-choice",
+  "xpReward": 10,
+  
+  "metadata": {
+    "icon": "🤔",
+    "duration": "1 min",
+    "difficulty": "easy"
+  },
+
+  "instructions": {
+    "text": "Tap the tasks that need notes",
+    "audio": "Which of these tasks need notes? Tap all that apply."
+  },
+
+  "scenarios": [
+    {
+      "id": "scenario-1",
+      "text": "Shopping for 12 grocery items",
+      "emoji": "🛒",
+      "needsNotes": true,
+      "explanation": "Yes! Hard to remember 12 items without a list"
+    },
+    {
+      "id": "scenario-2",
+      "text": "Brushing your teeth",
+      "emoji": "🪥",
+      "needsNotes": false,
+      "explanation": "No notes needed - you do this every day!"
+    },
+    {
+      "id": "scenario-3",
+      "text": "Teacher explaining homework assignment",
+      "emoji": "📚",
+      "needsNotes": true,
+      "explanation": "Yes! Write down what to do and when it's due"
+    },
+    {
+      "id": "scenario-4",
+      "text": "Watching your favorite TV show",
+      "emoji": "📺",
+      "needsNotes": false,
+      "explanation": "No notes needed - just enjoy!"
+    },
+    {
+      "id": "scenario-5",
+      "text": "Learning how to fix a bike tire",
+      "emoji": "🚲",
+      "needsNotes": true,
+      "explanation": "Yes! Steps are easy to forget without notes"
+    },
+    {
+      "id": "scenario-6",
+      "text": "Putting on your shoes",
+      "emoji": "👟",
+      "needsNotes": false,
+      "explanation": "No notes needed - you already know how!"
+    }
+  ],
+
+  "feedback": {
+    "perfect": {
+      "message": "Perfect! You know when notes help! 🎯",
+      "audio": "Great job! You understand when to take notes."
+    },
+    "good": {
+      "message": "Good! Just a couple wrong 👍",
+      "audio": "Almost there! Take another look."
+    },
+    "tryAgain": {
+      "message": "Look again. Which tasks are new or have many steps? 💡",
+      "audio": "Think about which tasks are easy to forget."
+    }
+  },
+
+  "completion": {
+    "xpAwarded": 10,
+    "encouragement": [
+      "Nice work! 🌟",
+      "You're learning! ✨",
+      "Great thinking! 💡"
+    ]
+  }
+}

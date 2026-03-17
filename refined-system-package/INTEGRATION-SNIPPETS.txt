@@ -1,0 +1,73 @@
+# INTEGRATION SNIPPETS
+# Copy-paste these into your Nova files
+
+## 1. Add to index.html (before </body>)
+
+<script src="js/systems/repetition.js"></script>
+<script src="js/core/refined-lesson-renderer.js"></script>
+
+
+## 2. Add to router.js showHome() function
+
+// Add this to the skills grid:
+<div class="skill-card" onclick="NovaRepetition.showDailySessionPrompt()">
+    <div class="skill-icon">🎯</div>
+    <div class="skill-name">Note Master Refined</div>
+    <div class="skill-desc">NEW: Smart daily practice</div>
+    <div style="margin-top: 8px;">
+        <span class="badge badge-success">Beta</span>
+    </div>
+</div>
+
+
+## 3. Add CSS for completion screen (add to components.css)
+
+.completion-screen {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.completion-icon {
+    font-size: 80px;
+    margin-bottom: 16px;
+}
+
+.completion-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 32px 0;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+
+## 4. Test in browser console
+
+// View daily session
+NovaRepetition.generateDailySession()
+
+// View concept schedule
+NovaRepetition.viewSchedule()
+
+// Start session manually
+NovaRepetition.showDailySessionPrompt()
+
+// Reset for testing
+localStorage.removeItem('nova-concepts');
+localStorage.removeItem('current-session');
+location.reload();

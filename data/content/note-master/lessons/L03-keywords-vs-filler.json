@@ -1,0 +1,181 @@
+{
+  "lessonId": "L03",
+  "slug": "keywords-vs-filler",
+  "block": "foundation",
+  "order": 3,
+  "totalInBlock": 3,
+  
+  "metadata": {
+    "title": "Keywords vs Filler",
+    "subtitle": "Drop small words, keep important ones",
+    "icon": "🔑",
+    "duration": "2 min",
+    "xpReward": 20,
+    "type": "lesson"
+  },
+
+  "flow": [
+    {
+      "stepId": "intro",
+      "type": "step-card",
+      "content": {
+        "icon": "🔑",
+        "title": "Keywords vs Filler",
+        "sections": [
+          {
+            "type": "text",
+            "content": "Not all words are equal"
+          },
+          {
+            "type": "text",
+            "content": "Some words carry meaning. Others just fill space."
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "example",
+      "type": "step-card",
+      "content": {
+        "icon": "👀",
+        "title": "See the Difference",
+        "sections": [
+          {
+            "type": "example",
+            "title": "Original sentence",
+            "text": "The dog ran very fast down the street"
+          },
+          {
+            "type": "example",
+            "title": "Keywords only",
+            "text": "dog ran fast"
+          },
+          {
+            "type": "tip",
+            "icon": "✨",
+            "title": "Same meaning",
+            "text": "3 words instead of 8!"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "filler-words",
+      "type": "step-card",
+      "content": {
+        "icon": "🚫",
+        "title": "Filler Words to Drop",
+        "sections": [
+          {
+            "type": "list",
+            "items": [
+              "the, a, an (articles)",
+              "is, was, were (simple verbs)",
+              "very, really, quite (intensifiers)",
+              "down, up, over (directions)",
+              "and, or, but (when obvious)"
+            ]
+          },
+          {
+            "type": "tip",
+            "icon": "💡",
+            "title": "Rule",
+            "text": "If removing it doesn't change the meaning, drop it"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "practice-1",
+      "type": "drag-drop",
+      "content": {
+        "icon": "🎯",
+        "title": "Sort the Words",
+        "instruction": "Drag keywords to the green box. Drop filler words in the gray box.",
+        "sentence": "The dog ran very fast down the street",
+        "words": ["The", "dog", "ran", "very", "fast", "down", "the", "street"],
+        "keywords": ["dog", "ran", "fast", "street"],
+        "fillerWords": ["The", "very", "down", "the"],
+        "feedback": {
+          "correct": "Perfect! Those are the keywords! ✨",
+          "hint": "Think: what or who + what happened"
+        }
+      }
+    },
+    {
+      "stepId": "practice-2",
+      "type": "tap-keywords",
+      "content": {
+        "icon": "✏️",
+        "title": "Highlight Keywords",
+        "instruction": "Tap only the keywords you'd write in notes",
+        "sentence": "The Amazon rainforest is very important for the environment",
+        "words": ["The", "Amazon", "rainforest", "is", "very", "important", "for", "the", "environment"],
+        "correctWords": ["Amazon", "rainforest", "important", "environment"],
+        "hint": "Skip: the, is, very, for"
+      }
+    },
+    {
+      "stepId": "practice-3",
+      "type": "build-note",
+      "content": {
+        "icon": "🛠️",
+        "title": "Build Your Note",
+        "instruction": "Drag only keywords to create a short note",
+        "sentence": "Mount Everest is the tallest mountain on Earth",
+        "availableWords": ["Mount", "Everest", "is", "the", "tallest", "mountain", "on", "Earth"],
+        "correctNote": ["Mount", "Everest", "tallest", "mountain", "Earth"],
+        "alternates": [
+          ["Everest", "tallest", "mountain"],
+          ["Mt", "Everest", "=", "tallest"]
+        ]
+      }
+    },
+    {
+      "stepId": "summary",
+      "type": "step-card",
+      "content": {
+        "icon": "🎯",
+        "title": "Keep What Matters",
+        "sections": [
+          {
+            "type": "text",
+            "content": "Keywords = words that carry meaning"
+          },
+          {
+            "type": "text",
+            "content": "Filler = words that just connect"
+          },
+          {
+            "type": "example",
+            "title": "Quick test",
+            "text": "If you remove it and the meaning stays → it's filler"
+          }
+        ]
+      }
+    }
+  ],
+
+  "practiceActivities": [
+    {
+      "practiceId": "P03A",
+      "title": "Keyword Highlighter",
+      "type": "highlight-keywords",
+      "xpReward": 10,
+      "instruction": "Highlight keywords in 5 sentences",
+      "contentRef": "practice/P03A.json"
+    },
+    {
+      "practiceId": "P03B",
+      "title": "Build Clean Notes",
+      "type": "drag-keywords",
+      "xpReward": 10,
+      "instruction": "Drag keywords to build notes, drop filler words",
+      "contentRef": "practice/P03B.json"
+    }
+  ],
+
+  "nextLesson": "L04",
+  "previousLesson": "L02",
+  "blockReview": "R01"
+}

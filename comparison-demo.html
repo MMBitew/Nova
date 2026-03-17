@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova - Testing Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f7fa;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #111827;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .system-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .system-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .system-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #111827;
+        }
+
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-current {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-new {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f3f4f6;
+            display: flex;
+            align-items: start;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            margin-right: 12px;
+            font-size: 20px;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-label {
+            font-weight: 600;
+            color: #111827;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .feature-desc {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #111827;
+        }
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+
+        .key-differences {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .diff-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        th {
+            background: #f9fafb;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .checkmark {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Nova Testing - Compare Systems</h1>
+
+        <div class="comparison">
+            <!-- Original System -->
+            <div class="system-card">
+                <div class="system-header">
+                    <div class="system-title">📚 Original</div>
+                    <span class="badge badge-current">Current</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li>
+                        <span class="feature-icon">📊</span>
+                        <div class="feature-text">
+                            <span class="feature-label">60 Activities</span>
+                            <span class="feature-desc">15 lessons + 30 practices + 10 reviews + 5 challenges</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="feature-icon">➡️</span>
+                        <div class="feature-text">
+                            <span class="feature-label">Linear Flow</span>
+                            <span class="feature-desc">Complete in order, auto-advance</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="feature-icon">⏱️</span>
+                        <div class="feature-text">
+                            <span class="feature-label">~2 Hours Total</span>
+                            <span class="feature-desc">2-3 minutes per activity</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="feature-icon">📖</span>
+                        <div class="feature-text">
+                            <span class="feature-label">Learn Once</span>
+                            <span class="feature-desc">Each concept taught once, move forward</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <button class="btn btn-secondary" onclick="window.location.href='index.html'">
+                    Try Original System
+                </button>
+            </div>
+
+            <!-- Refined System -->
+            <div class="system-card">
+                <div class="system-header">
+                    <div class="system-title">🎯 Refined</div>
+                    <span class="badge badge-new">NEW Beta</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li>
+                        <span class="feature-icon">🎓</span>
+                        <div class="feature-text">
+                            <span class="feature-label">5 Concepts</span>
+                            <span class="feature-desc">Main idea, keywords, short notes, bullets, symbols</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="feature-icon">🔄</span>
+                        <div class="feature-text">
+                            <span class="feature-label">Spaced Repetition</span>
+                            <span class="feature-desc">Auto-scheduled reviews based on performance</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="feature-icon">⏰</span>
+                        <div class="feature-text">
+                            <span class="feature-label">~5-8 Min Daily</span>
+                            <span class="feature-desc">Short daily sessions</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="feature-icon">🎯</span>
+                        <div class="feature-text">
+                            <span class="feature-label">Practice Until Mastery</span>
+                            <span class="feature-desc">Concepts repeat until internalized</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <button class="btn btn-primary" onclick="alert('Open Nova, tap \'Note Master Refined\'')">
+                    Try Refined System
+                </button>
+            </div>
+        </div>
+
+        <!-- Key Differences Table -->
+        <div class="key-differences">
+            <h2 class="diff-title">Key Differences</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Original</th>
+                        <th>Refined</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Interaction Speed</strong></td>
+                        <td>After 45+ seconds</td>
+                        <td><span class="checkmark">✓</span> After 30 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Repetition</strong></td>
+                        <td>Learn once, move forward</td>
+                        <td><span class="checkmark">✓</span> Spaced reviews</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Adaptation</strong></td>
+                        <td>Same for everyone</td>
+                        <td><span class="checkmark">✓</span> Adapts to performance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Session Length</strong></td>
+                        <td>Variable (can binge)</td>
+                        <td><span class="checkmark">✓</span> Fixed daily (5-8 min)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Daily Routine</strong></td>
+                        <td>User decides when</td>
+                        <td><span class="checkmark">✓</span> System prompts daily</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Content Volume</strong></td>
+                        <td><span class="checkmark">✓</span> 60 activities</td>
+                        <td>5 concepts (for now)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Completion Feel</strong></td>
+                        <td><span class="checkmark">✓</span> Can "finish"</td>
+                        <td>Ongoing practice</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="margin-top: 40px; text-align: center; color: #6b7280;">
+            <p><strong>Testing Goal:</strong> Which system helps teens learn better?</p>
+            <p style="margin-top: 8px;">Track: completion rate, return rate, mastery level, user preference</p>
+        </div>
+    </div>
+</body>
+</html>

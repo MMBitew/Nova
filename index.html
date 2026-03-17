@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Nova - Learn at your own pace">
+    <meta name="theme-color" content="#6366f1">
+    
+    <title>Nova</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icons/nova-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/linear-progress.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="js/core/state.js" as="script">
+    <link rel="preload" href="js/core/router.js" as="script">
+</head>
+<body>
+    <!-- Main App Container -->
+    <div id="app">
+        
+        <!-- Header -->
+        <header id="header" class="header">
+            <div class="header-left">
+                <button id="backBtn" class="back-btn hidden" onclick="NovaRouter.goBack()">
+                    ← Back
+                </button>
+                <button id="homeBtn" class="home-btn hidden" onclick="NovaRouter.navigate('home')">
+                    🏠
+                </button>
+                <div id="headerTitle" class="header-title">
+                    <span class="nova-logo">✨ Nova</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div id="stats" class="stats">
+                    <span id="streakDisplay" class="stat-item">🔥 <span id="streak">0</span></span>
+                    <span id="xpDisplay" class="stat-item">⭐ <span id="xp">0</span></span>
+                </div>
+                <button id="voiceBtn" class="voice-btn hidden" onclick="NovaAudio.readCurrentScreen()">
+                    🔊
+                </button>
+            </div>
+        </header>
+
+        <!-- Progress Bar Container -->
+        <div id="progress-container"></div>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="main-content">
+            <!-- Content loads here dynamically -->
+            <div class="loading-screen">
+                <div class="loading-icon">✨</div>
+                <div class="loading-text">Loading Nova...</div>
+            </div>
+        </main>
+
+        <!-- Toast Notifications -->
+        <div id="toast-container" class="toast-container"></div>
+
+        <!-- Modal Container -->
+        <div id="modal-overlay" class="modal-overlay hidden"></div>
+        <div id="modal-container" class="modal-container hidden"></div>
+
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="js/core/state.js"></script>
+    <script src="js/core/storage.js"></script>
+    <script src="js/core/router.js"></script>
+    <script src="js/core/content-loader.js"></script>
+    <script src="js/core/lesson-renderer.js"></script>
+    <script src="js/core/linear-navigation.js"></script>
+
+    <!-- Component Scripts -->
+    <script src="js/components/modal.js"></script>
+    <script src="js/components/audio.js"></script>
+    <script src="js/components/toast.js"></script>
+
+    <!-- System Scripts -->
+    <script src="js/systems/gamification.js"></script>
+    <script src="js/systems/progress.js"></script>
+    <script src="js/systems/analytics.js"></script>
+
+    <!-- Content Modules -->
+    <script src="js/content/note-master/note-master.js"></script>
+
+    <!-- App Initialization -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>

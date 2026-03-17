@@ -1,0 +1,72 @@
+{
+  "lessonId": "L05-refined",
+  "version": "2.0",
+  "conceptId": "symbols",
+  "metadata": {
+    "title": "Symbols",
+    "subtitle": "→ ★ = shortcuts",
+    "icon": "→",
+    "estimatedTime": "5-8 min",
+    "difficulty": "adaptive",
+    "type": "refined-lesson"
+  },
+
+  "introduce": {
+    "stepId": "introduce",
+    "type": "visual-intro",
+    "maxDuration": 30,
+    "content": {
+      "icon": "→",
+      "title": "Symbols Save Time",
+      "subtitle": "→ = leads to, ★ = important",
+      "example": {
+        "without": "Rain causes flooding",
+        "with": "rain → flooding",
+        "visual": "symbol-demo"
+      }
+    }
+  },
+
+  "questions": [
+    {
+      "id": "q1",
+      "difficulty": 1,
+      "type": "match-symbol",
+      "prompt": "What does → mean?",
+      "options": [
+        {"text": "leads to", "isCorrect": true},
+        {"text": "important", "isCorrect": false},
+        {"text": "equals", "isCorrect": false}
+      ]
+    },
+    {
+      "id": "q2",
+      "difficulty": 2,
+      "type": "add-symbol",
+      "prompt": "Add a symbol to improve this note",
+      "context": {
+        "note": "Sun makes plants grow",
+        "correctSymbol": "→",
+        "improved": "sun → plants grow"
+      }
+    },
+    {
+      "id": "q3",
+      "difficulty": 2,
+      "type": "add-symbol",
+      "prompt": "Add a symbol",
+      "context": {
+        "note": "Important: Test Friday",
+        "correctSymbol": "★",
+        "improved": "★ Test Friday"
+      }
+    }
+  ],
+
+  "completion": {
+    "mastery": {
+      "message": "Symbols mastered! →⭐",
+      "xp": 30
+    }
+  }
+}

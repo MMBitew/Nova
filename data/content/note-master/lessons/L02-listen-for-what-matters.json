@@ -1,0 +1,164 @@
+{
+  "lessonId": "L02",
+  "slug": "listen-for-what-matters",
+  "block": "foundation",
+  "order": 2,
+  "totalInBlock": 3,
+  
+  "metadata": {
+    "title": "Listen for What Matters",
+    "subtitle": "Hear sentence → tap important words",
+    "icon": "👂",
+    "duration": "2 min",
+    "xpReward": 20,
+    "type": "lesson"
+  },
+
+  "flow": [
+    {
+      "stepId": "intro",
+      "type": "step-card",
+      "content": {
+        "icon": "👂",
+        "title": "Listen for What Matters",
+        "sections": [
+          {
+            "type": "text",
+            "content": "You can't write everything you hear"
+          },
+          {
+            "type": "text",
+            "content": "Learn to catch the important parts"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "example-1",
+      "type": "audio-highlight",
+      "content": {
+        "icon": "🎧",
+        "title": "Listen to This",
+        "audio": "The Amazon rainforest produces twenty percent of the world's oxygen",
+        "text": "The Amazon rainforest produces 20% of the world's oxygen",
+        "instruction": "Which words matter most?",
+        "highlightWords": ["Amazon", "rainforest", "produces", "20%", "oxygen"],
+        "showAfterAudio": true
+      }
+    },
+    {
+      "stepId": "practice-1",
+      "type": "tap-keywords",
+      "content": {
+        "icon": "👆",
+        "title": "Tap Important Words",
+        "sentence": "The Amazon rainforest produces 20% of the world's oxygen",
+        "words": ["The", "Amazon", "rainforest", "produces", "20%", "of", "the", "world's", "oxygen"],
+        "correctWords": ["Amazon", "rainforest", "produces", "20%", "oxygen"],
+        "feedback": {
+          "correct": "Perfect! Those are the key facts",
+          "partial": "Good start! Did you miss anything?",
+          "incorrect": "Try again. What's the main topic and what does it do?"
+        },
+        "hint": "Look for: what thing + what it does + numbers"
+      }
+    },
+    {
+      "stepId": "pattern",
+      "type": "step-card",
+      "content": {
+        "icon": "🎯",
+        "title": "What to Listen For",
+        "sections": [
+          {
+            "type": "list",
+            "items": [
+              "Main topic (what or who)",
+              "Action (what happens)",
+              "Numbers and facts",
+              "Important names"
+            ]
+          },
+          {
+            "type": "tip",
+            "icon": "💡",
+            "title": "Skip",
+            "text": "Small words like: the, a, an, is, was"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "practice-2",
+      "type": "tap-keywords",
+      "content": {
+        "icon": "🎯",
+        "title": "Try Another",
+        "audio": "Mount Everest is the tallest mountain on Earth at 29,032 feet",
+        "sentence": "Mount Everest is the tallest mountain on Earth at 29,032 feet",
+        "words": ["Mount", "Everest", "is", "the", "tallest", "mountain", "on", "Earth", "at", "29,032", "feet"],
+        "correctWords": ["Mount", "Everest", "tallest", "mountain", "Earth", "29,032", "feet"],
+        "autoReveal": true
+      }
+    },
+    {
+      "stepId": "practice-3",
+      "type": "tap-keywords",
+      "content": {
+        "icon": "⚡",
+        "title": "One More",
+        "audio": "Photosynthesis uses sunlight to turn water and carbon dioxide into energy",
+        "sentence": "Photosynthesis uses sunlight to turn water and carbon dioxide into energy",
+        "words": ["Photosynthesis", "uses", "sunlight", "to", "turn", "water", "and", "carbon dioxide", "into", "energy"],
+        "correctWords": ["Photosynthesis", "sunlight", "water", "carbon dioxide", "energy"]
+      }
+    },
+    {
+      "stepId": "summary",
+      "type": "step-card",
+      "content": {
+        "icon": "✨",
+        "title": "You've Got It!",
+        "sections": [
+          {
+            "type": "text",
+            "content": "Listen for: Topic + Action + Facts"
+          },
+          {
+            "type": "text",
+            "content": "Skip: the, a, is, was, very"
+          },
+          {
+            "type": "example",
+            "title": "Your Notes",
+            "text": "Amazon rainforest → 20% oxygen",
+            "note": "Short and clear!"
+          }
+        ]
+      }
+    }
+  ],
+
+  "practiceActivities": [
+    {
+      "practiceId": "P02A",
+      "title": "Important Word Challenge",
+      "type": "audio-tap-keywords",
+      "xpReward": 10,
+      "instruction": "Listen to 3 sentences → tap most important words",
+      "contentRef": "practice/P02A.json"
+    },
+    {
+      "practiceId": "P02B",
+      "title": "What to Write Down",
+      "type": "instruction-choice",
+      "xpReward": 10,
+      "instruction": "Hear instruction → choose what to write",
+      "contentRef": "practice/P02B.json"
+    }
+  ],
+
+  "nextLesson": "L03",
+  "previousLesson": "L01",
+  "blockReview": null
+}

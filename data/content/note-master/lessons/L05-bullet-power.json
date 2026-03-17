@@ -1,0 +1,140 @@
+{
+  "lessonId": "L05",
+  "slug": "bullet-power",
+  "block": "writing",
+  "order": 2,
+  "totalInBlock": 4,
+  
+  "metadata": {
+    "title": "Bullet Power",
+    "subtitle": "Organize with bullets",
+    "icon": "•",
+    "duration": "3 min",
+    "xpReward": 20,
+    "type": "lesson"
+  },
+
+  "flow": [
+    {
+      "stepId": "intro",
+      "type": "step-card",
+      "content": {
+        "icon": "•",
+        "title": "Bullet Power",
+        "sections": [
+          {
+            "type": "text",
+            "content": "Bullets make lists easy to read"
+          },
+          {
+            "type": "text",
+            "content": "Each bullet = one idea"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "example",
+      "type": "step-card",
+      "content": {
+        "icon": "📝",
+        "title": "See the Difference",
+        "sections": [
+          {
+            "type": "example",
+            "title": "Without bullets (messy)",
+            "text": "I need eggs milk bread cheese butter at the store"
+          },
+          {
+            "type": "example",
+            "title": "With bullets (clear)",
+            "text": "Shopping list:\n• eggs\n• milk\n• bread\n• cheese\n• butter"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "when-to-use",
+      "type": "step-card",
+      "content": {
+        "icon": "🎯",
+        "title": "When to Use Bullets",
+        "sections": [
+          {
+            "type": "list",
+            "items": [
+              "Lists of items",
+              "Separate ideas",
+              "No specific order needed",
+              "Key points from paragraph"
+            ]
+          },
+          {
+            "type": "tip",
+            "icon": "💡",
+            "title": "Rule",
+            "text": "One bullet = one thought"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "practice",
+      "type": "convert-to-bullets",
+      "content": {
+        "icon": "✏️",
+        "title": "Convert This",
+        "instruction": "Turn this paragraph into bullets",
+        "paragraph": "For the science project you need poster board markers glue scissors and colored paper",
+        "correctBullets": ["poster board", "markers", "glue", "scissors", "colored paper"],
+        "hint": "Look for items in the list"
+      }
+    },
+    {
+      "stepId": "summary",
+      "type": "step-card",
+      "content": {
+        "icon": "✨",
+        "title": "Bullets Organize",
+        "sections": [
+          {
+            "type": "text",
+            "content": "Bullets break down information"
+          },
+          {
+            "type": "text",
+            "content": "Each point stands alone"
+          },
+          {
+            "type": "example",
+            "title": "Perfect for",
+            "text": "Lists, ideas, facts, key points"
+          }
+        ]
+      }
+    }
+  ],
+
+  "practiceActivities": [
+    {
+      "practiceId": "P05A",
+      "title": "Paragraph to Bullets",
+      "type": "conversion",
+      "xpReward": 10,
+      "instruction": "Convert 3 paragraphs to bullet lists",
+      "contentRef": "practice/P05A.json"
+    },
+    {
+      "practiceId": "P05B",
+      "title": "Bullet or Number?",
+      "type": "format-choice",
+      "xpReward": 10,
+      "instruction": "Choose bullet vs number for 5 scenarios",
+      "contentRef": "practice/P05B.json"
+    }
+  ],
+
+  "nextLesson": "L06",
+  "previousLesson": "L04",
+  "blockReview": null
+}

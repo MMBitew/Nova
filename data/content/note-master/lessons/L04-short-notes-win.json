@@ -1,0 +1,187 @@
+{
+  "lessonId": "L04",
+  "slug": "short-notes-win",
+  "block": "writing",
+  "order": 1,
+  "totalInBlock": 4,
+  
+  "metadata": {
+    "title": "Short Notes Win",
+    "subtitle": "Turn sentences into 3-word notes",
+    "icon": "✂️",
+    "duration": "3 min",
+    "xpReward": 20,
+    "type": "lesson"
+  },
+
+  "flow": [
+    {
+      "stepId": "intro",
+      "type": "step-card",
+      "content": {
+        "icon": "✂️",
+        "title": "Short Notes Win",
+        "sections": [
+          {
+            "type": "text",
+            "content": "Writing less helps you remember more"
+          },
+          {
+            "type": "text",
+            "content": "Your brain processes short notes faster"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "example",
+      "type": "step-card",
+      "content": {
+        "icon": "📝",
+        "title": "Compare These",
+        "sections": [
+          {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "Too Long",
+                "text": "The dog ran very fast down the street",
+                "emoji": "❌",
+                "color": "#ef4444"
+              },
+              {
+                "label": "Just Right",
+                "text": "dog ran fast",
+                "emoji": "✅",
+                "color": "#58cc02"
+              }
+            ]
+          },
+          {
+            "type": "tip",
+            "icon": "💡",
+            "title": "Goal",
+            "text": "3-5 words captures the idea"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "practice-1",
+      "type": "shorten-sentence",
+      "content": {
+        "icon": "✏️",
+        "title": "Your Turn",
+        "instruction": "Turn this 10-word sentence into 4 words or less",
+        "sentence": "The Amazon rainforest produces twenty percent of Earth's oxygen",
+        "wordCount": 10,
+        "targetWords": 4,
+        "hints": [
+          "Skip 'the'",
+          "Use symbols: 20% instead of 'twenty percent'",
+          "Main idea: what + does + how much"
+        ],
+        "exampleAnswers": [
+          "Amazon produces 20% oxygen",
+          "Amazon → 20% oxygen",
+          "Rainforest makes 20% O2"
+        ],
+        "allowInput": true
+      }
+    },
+    {
+      "stepId": "method",
+      "type": "step-card",
+      "content": {
+        "icon": "🎯",
+        "title": "How to Shorten",
+        "sections": [
+          {
+            "type": "numbered-list",
+            "items": [
+              "Find main topic (who/what)",
+              "Find action (what it does)",
+              "Keep facts & numbers",
+              "Drop everything else"
+            ]
+          },
+          {
+            "type": "example",
+            "title": "Example",
+            "before": "Mount Everest is the tallest mountain on Earth",
+            "after": "Everest = tallest mountain"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "practice-2",
+      "type": "choose-shortest",
+      "content": {
+        "icon": "🎲",
+        "title": "Pick the Best Note",
+        "sentence": "Photosynthesis uses sunlight to turn water into energy",
+        "options": [
+          {
+            "text": "Photosynthesis uses sunlight to turn water into energy for plants",
+            "correct": false,
+            "feedback": "Too long! Added extra words"
+          },
+          {
+            "text": "Photosynthesis: sunlight → water → energy",
+            "correct": true,
+            "feedback": "Perfect! Short and clear"
+          },
+          {
+            "text": "sunlight energy",
+            "correct": false,
+            "feedback": "Too short! Missing key info"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "summary",
+      "type": "step-card",
+      "content": {
+        "icon": "✨",
+        "title": "Short = Strong",
+        "sections": [
+          {
+            "type": "text",
+            "content": "3-5 words is the sweet spot"
+          },
+          {
+            "type": "tip",
+            "icon": "⚡",
+            "title": "Remember",
+            "text": "Shorter notes = faster review = better memory"
+          }
+        ]
+      }
+    }
+  ],
+
+  "practiceActivities": [
+    {
+      "practiceId": "P04A",
+      "title": "Sentence Shortener",
+      "type": "shorten-sentences",
+      "xpReward": 10,
+      "instruction": "Turn 10-word sentences into 4-word notes",
+      "contentRef": "practice/P04A.json"
+    },
+    {
+      "practiceId": "P04B",
+      "title": "Best Note Picker",
+      "type": "choose-best-note",
+      "xpReward": 10,
+      "instruction": "Choose shortest correct note from 3 options",
+      "contentRef": "practice/P04B.json"
+    }
+  ],
+
+  "nextLesson": "L05",
+  "previousLesson": "L03",
+  "blockReview": null
+}

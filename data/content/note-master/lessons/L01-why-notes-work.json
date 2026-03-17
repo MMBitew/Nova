@@ -1,0 +1,175 @@
+{
+  "lessonId": "L01",
+  "slug": "why-notes-work",
+  "block": "foundation",
+  "order": 1,
+  "totalInBlock": 3,
+  
+  "metadata": {
+    "title": "Why Notes Work",
+    "subtitle": "Memory demo: remember with/without notes",
+    "icon": "🧠",
+    "duration": "2 min",
+    "xpReward": 20,
+    "type": "lesson"
+  },
+
+  "flow": [
+    {
+      "stepId": "intro",
+      "type": "intro-card",
+      "content": {
+        "icon": "🧠",
+        "title": "Why Notes Work",
+        "text": "Let's see how notes help you remember",
+        "audio": "Try this quick experiment"
+      }
+    },
+    {
+      "stepId": "demo-without",
+      "type": "memory-demo",
+      "content": {
+        "icon": "👂",
+        "title": "Listen Once",
+        "instruction": "I'll read a shopping list. Just listen.",
+        "items": [
+          "eggs",
+          "milk",
+          "bread",
+          "apples",
+          "cheese",
+          "butter",
+          "yogurt",
+          "chicken"
+        ],
+        "audio": "eggs, milk, bread, apples, cheese, butter, yogurt, chicken",
+        "hideItems": true,
+        "pauseAfter": 3000
+      }
+    },
+    {
+      "stepId": "recall-without",
+      "type": "recall-test",
+      "content": {
+        "icon": "🤔",
+        "title": "How Many Can You Remember?",
+        "instruction": "Tap the items you remember",
+        "options": [
+          "eggs", "milk", "bread", "apples", 
+          "cheese", "butter", "yogurt", "chicken",
+          "carrots", "bananas", "rice", "pasta"
+        ],
+        "correctAnswers": ["eggs", "milk", "bread", "apples", "cheese", "butter", "yogurt", "chicken"],
+        "showResult": true
+      }
+    },
+    {
+      "stepId": "demo-with",
+      "type": "memory-demo",
+      "content": {
+        "icon": "✍️",
+        "title": "Now Take Notes",
+        "instruction": "I'll read another list. Write it down this time.",
+        "items": [
+          "tomatoes",
+          "onions",
+          "garlic",
+          "peppers",
+          "carrots",
+          "lettuce",
+          "cucumber",
+          "broccoli"
+        ],
+        "audio": "tomatoes, onions, garlic, peppers, carrots, lettuce, cucumber, broccoli",
+        "showItems": false,
+        "allowNotes": true,
+        "notePrompt": "Write each item you hear:"
+      }
+    },
+    {
+      "stepId": "recall-with",
+      "type": "recall-test",
+      "content": {
+        "icon": "📝",
+        "title": "Check Your Notes",
+        "instruction": "Use your notes to answer",
+        "showNotes": true,
+        "options": [
+          "tomatoes", "onions", "garlic", "peppers",
+          "carrots", "lettuce", "cucumber", "broccoli",
+          "celery", "spinach", "kale", "corn"
+        ],
+        "correctAnswers": ["tomatoes", "onions", "garlic", "peppers", "carrots", "lettuce", "cucumber", "broccoli"]
+      }
+    },
+    {
+      "stepId": "reveal",
+      "type": "comparison-card",
+      "content": {
+        "icon": "✨",
+        "title": "See the Difference?",
+        "comparison": [
+          {
+            "label": "Without Notes",
+            "value": "{{scoreWithout}}",
+            "emoji": "😅"
+          },
+          {
+            "label": "With Notes",
+            "value": "{{scoreWith}}",
+            "emoji": "🎯"
+          }
+        ],
+        "insight": "Notes help you remember more!",
+        "audio": "Notes help your brain hold onto information"
+      }
+    },
+    {
+      "stepId": "takeaway",
+      "type": "step-card",
+      "content": {
+        "icon": "💡",
+        "title": "Why It Works",
+        "sections": [
+          {
+            "type": "text",
+            "content": "Your brain can only remember 5-7 things at once"
+          },
+          {
+            "type": "text",
+            "content": "Notes let you store information outside your brain"
+          },
+          {
+            "type": "tip",
+            "icon": "🎯",
+            "title": "Remember",
+            "text": "Notes = extra brain storage"
+          }
+        ]
+      }
+    }
+  ],
+
+  "practiceActivities": [
+    {
+      "practiceId": "P01A",
+      "title": "Memory Game",
+      "type": "memory-challenge",
+      "xpReward": 10,
+      "instruction": "Try to recall the list with and without notes",
+      "contentRef": "practice/P01A.json"
+    },
+    {
+      "practiceId": "P01B",
+      "title": "When to Take Notes",
+      "type": "scenario-choice",
+      "xpReward": 10,
+      "instruction": "Tap which tasks need notes",
+      "contentRef": "practice/P01B.json"
+    }
+  ],
+
+  "nextLesson": "L02",
+  "previousLesson": null,
+  "blockReview": null
+}

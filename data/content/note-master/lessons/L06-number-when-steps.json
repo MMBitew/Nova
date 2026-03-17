@@ -1,0 +1,116 @@
+{
+  "lessonId": "L06",
+  "slug": "number-when-steps",
+  "block": "writing",
+  "order": 3,
+  "totalInBlock": 4,
+  
+  "metadata": {
+    "title": "Number When It's Steps",
+    "subtitle": "Show order with numbers",
+    "icon": "🔢",
+    "duration": "3 min",
+    "xpReward": 20,
+    "type": "lesson"
+  },
+
+  "flow": [
+    {
+      "stepId": "intro",
+      "type": "step-card",
+      "content": {
+        "icon": "🔢",
+        "title": "Numbers Show Order",
+        "sections": [
+          {"type": "text", "content": "Some things happen in a specific order"},
+          {"type": "text", "content": "Numbers help you remember the sequence"}
+        ]
+      }
+    },
+    {
+      "stepId": "example",
+      "type": "step-card",
+      "content": {
+        "icon": "🍪",
+        "title": "Recipe Steps",
+        "sections": [
+          {"type": "example", "title": "Without numbers (confusing)", "text": "Mix ingredients, heat oven, bake, cool"},
+          {"type": "example", "title": "With numbers (clear)", "text": "1. Heat oven to 350°\n2. Mix ingredients\n3. Bake 20 min\n4. Cool 10 min"}
+        ]
+      }
+    },
+    {
+      "stepId": "when-to-number",
+      "type": "step-card",
+      "content": {
+        "icon": "🎯",
+        "title": "When to Use Numbers",
+        "sections": [
+          {"type": "list", "items": ["Steps in a process", "Instructions to follow", "Events in time order", "Ranked items (1st, 2nd, 3rd)"]},
+          {"type": "tip", "icon": "💡", "title": "Rule", "text": "If order matters → use numbers"}
+        ]
+      }
+    },
+    {
+      "stepId": "practice",
+      "type": "number-sequence",
+      "content": {
+        "icon": "✏️",
+        "title": "Put in Order",
+        "instruction": "Number these steps from 1-4",
+        "scrambledSteps": ["Add toppings", "Spread sauce", "Roll out dough", "Bake pizza"],
+        "correctOrder": ["Roll out dough", "Spread sauce", "Add toppings", "Bake pizza"],
+        "hint": "Think: what has to happen first?"
+      }
+    },
+    {
+      "stepId": "bullets-vs-numbers",
+      "type": "step-card",
+      "content": {
+        "icon": "⚖️",
+        "title": "Bullets or Numbers?",
+        "sections": [
+          {"type": "text", "content": "Bullets = items in any order"},
+          {"type": "text", "content": "Numbers = specific sequence"},
+          {"type": "example", "title": "Bullets: Shopping list", "text": "• eggs\n• milk\n• bread"},
+          {"type": "example", "title": "Numbers: Recipe", "text": "1. Crack eggs\n2. Add milk\n3. Mix together"}
+        ]
+      }
+    },
+    {
+      "stepId": "summary",
+      "type": "step-card",
+      "content": {
+        "icon": "✨",
+        "title": "Numbers = Order",
+        "sections": [
+          {"type": "text", "content": "Use numbers when steps must be in sequence"},
+          {"type": "tip", "icon": "🎯", "title": "Perfect for", "text": "Recipes, directions, instructions, timelines"}
+        ]
+      }
+    }
+  ],
+
+  "practiceActivities": [
+    {
+      "practiceId": "P06A",
+      "title": "Number the Steps",
+      "type": "sequence-order",
+      "xpReward": 10,
+      "instruction": "Put 4 scrambled instruction sets in order",
+      "contentRef": "practice/P06A.json"
+    },
+    {
+      "practiceId": "P06B",
+      "title": "Bullets or Numbers?",
+      "type": "format-choice",
+      "xpReward": 10,
+      "instruction": "Choose numbered list for recipes/directions/rules",
+      "contentRef": "practice/P06B.json"
+    }
+  ],
+
+  "nextLesson": "L07",
+  "previousLesson": "L05",
+  "blockReview": null
+}

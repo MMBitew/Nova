@@ -1,0 +1,130 @@
+{
+  "reviewId": "R01",
+  "title": "Foundation Review",
+  "subtitle": "Check your foundation skills",
+  "block": "foundation",
+  "icon": "🎯",
+  
+  "metadata": {
+    "type": "block-review",
+    "unlocksAfter": ["L01", "L02", "L03"],
+    "duration": "3 min",
+    "xpReward": 15,
+    "totalQuestions": 5
+  },
+
+  "instructions": {
+    "text": "Let's review what you learned!",
+    "audio": "Time to check your foundation skills. You've got this!"
+  },
+
+  "questions": [
+    {
+      "id": "q1",
+      "type": "memory-recall",
+      "fromLesson": "L01",
+      "content": {
+        "title": "Memory Test",
+        "audio": "milk, eggs, bread, butter, cheese",
+        "instruction": "Listen once, then write what you remember",
+        "items": ["milk", "eggs", "bread", "butter", "cheese"],
+        "allowNotes": false,
+        "scoreType": "partial"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "tap-keywords",
+      "fromLesson": "L02",
+      "content": {
+        "sentence": "Mount Everest is 29,032 feet tall and located in the Himalayas",
+        "words": ["Mount", "Everest", "is", "29,032", "feet", "tall", "and", "located", "in", "the", "Himalayas"],
+        "correctWords": ["Mount", "Everest", "29,032", "feet", "Himalayas"],
+        "instruction": "Tap important words only"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "drag-drop",
+      "fromLesson": "L03",
+      "content": {
+        "instruction": "Drag keywords to build a note. Drop filler words.",
+        "sentence": "The dog ran very fast down the street",
+        "words": ["The", "dog", "ran", "very", "fast", "down", "the", "street"],
+        "targetZone": "note-area",
+        "correctWords": ["dog", "ran", "fast"],
+        "fillerWords": ["The", "very", "down", "the", "street"]
+      }
+    },
+    {
+      "id": "q4",
+      "type": "audio-to-note",
+      "fromLesson": "L02",
+      "content": {
+        "audio": "The Pacific Ocean is the largest ocean covering 63 million square miles",
+        "instruction": "Listen and write the key facts",
+        "exampleAnswers": [
+          "Pacific = largest ocean",
+          "Pacific Ocean → 63M sq mi",
+          "Pacific: biggest, 63M miles²"
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "type": "main-idea",
+      "fromLesson": "L01",
+      "content": {
+        "notes": [
+          "Amazon rainforest",
+          "Produces 20% oxygen",
+          "Covers 2.1M sq miles",
+          "Located in South America"
+        ],
+        "instruction": "What's the main idea?",
+        "options": [
+          {
+            "text": "The Amazon rainforest is important for Earth's oxygen",
+            "correct": true
+          },
+          {
+            "text": "South America has forests",
+            "correct": false
+          },
+          {
+            "text": "Oxygen comes from trees",
+            "correct": false
+          }
+        ]
+      }
+    }
+  ],
+
+  "scoring": {
+    "perfect": {
+      "min": 5,
+      "max": 5,
+      "message": "Perfect! Foundation skills mastered! 🏆",
+      "badge": "foundation-master"
+    },
+    "good": {
+      "min": 3,
+      "max": 4,
+      "message": "Great work! You've got the foundation! ✨",
+      "badge": null
+    },
+    "needsPractice": {
+      "min": 0,
+      "max": 2,
+      "message": "Keep practicing! Try lessons 1-3 again 💪",
+      "badge": null,
+      "suggestRetry": ["L01", "L02", "L03"]
+    }
+  },
+
+  "completion": {
+    "nextReview": "R02",
+    "nextLesson": "L04",
+    "unlocks": ["writing-block"]
+  }
+}

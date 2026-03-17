@@ -1,0 +1,375 @@
+{
+  "lessonId": "L01-refined",
+  "version": "2.0",
+  "conceptId": "main-idea",
+  "metadata": {
+    "title": "Main Idea",
+    "subtitle": "Find the big point",
+    "icon": "🎯",
+    "estimatedTime": "5-8 min",
+    "difficulty": "adaptive",
+    "type": "refined-lesson"
+  },
+
+  "introduce": {
+    "stepId": "introduce",
+    "type": "visual-intro",
+    "maxDuration": 30,
+    "content": {
+      "icon": "🎯",
+      "title": "Main Idea = Big Point",
+      "subtitle": "Every paragraph has one big idea",
+      "visual": {
+        "type": "simple-diagram",
+        "content": "visual-main-idea-tree",
+        "description": "Tree diagram: Main Idea (trunk) supported by Details (branches)"
+      },
+      "example": {
+        "text": "Dogs are great pets. They are loyal. They protect homes. They make us happy.",
+        "highlight": "Dogs are great pets",
+        "label": "← This is the main idea"
+      },
+      "audio": "The main idea is the most important point. It's what the whole paragraph is about."
+    },
+    "autoAdvance": 15,
+    "skipButton": true
+  },
+
+  "questions": [
+    {
+      "id": "q1",
+      "difficulty": 1,
+      "type": "multiple-choice",
+      "prompt": "Which is the main idea?",
+      "context": {
+        "text": "Cats make wonderful pets. They are soft and cuddly. They purr when happy. Many people love cats.",
+        "display": "full-paragraph"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Cats make wonderful pets",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Yes! 🎯 That's the big point!",
+            "audio": "Correct! That's the main idea of the paragraph"
+          }
+        },
+        {
+          "id": "b",
+          "text": "They are soft and cuddly",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "This is a detail, not the main idea",
+            "hint": "The main idea covers everything in the paragraph",
+            "audio": "Not quite. This is just one detail about cats"
+          }
+        },
+        {
+          "id": "c",
+          "text": "They purr when happy",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "This is a detail, not the main idea",
+            "hint": "Look for the sentence that talks about all of it",
+            "audio": "Not quite. This is just one thing cats do"
+          }
+        }
+      ],
+      "adaptiveRouting": {
+        "firstTryCorrect": "advance-to-q2",
+        "secondTryCorrect": "reinforce-q1b",
+        "maxRetries": 2,
+        "afterMaxRetries": "show-answer-advance"
+      }
+    },
+
+    {
+      "id": "q1b",
+      "difficulty": 1,
+      "type": "multiple-choice",
+      "prompt": "One more! Which is the main idea?",
+      "context": {
+        "text": "Reading helps you learn. You discover new words. You learn about the world. You use your imagination.",
+        "display": "full-paragraph"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Reading helps you learn",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! 🎯",
+            "audio": "Yes! That's the big idea"
+          }
+        },
+        {
+          "id": "b",
+          "text": "You discover new words",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "That's a detail",
+            "hint": "Which sentence covers all the others?",
+            "audio": "This is just one benefit of reading"
+          }
+        },
+        {
+          "id": "c",
+          "text": "You use your imagination",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "That's a detail",
+            "hint": "What's the biggest point?",
+            "audio": "This is just one thing reading does"
+          }
+        }
+      ],
+      "adaptiveRouting": {
+        "firstTryCorrect": "advance-to-q2",
+        "secondTryCorrect": "advance-to-q2",
+        "maxRetries": 2,
+        "afterMaxRetries": "show-answer-advance"
+      }
+    },
+
+    {
+      "id": "q2",
+      "difficulty": 2,
+      "type": "multiple-choice",
+      "prompt": "Which is the main idea?",
+      "context": {
+        "text": "Exercise is good for your health. It makes your heart stronger. It helps you sleep better. It gives you more energy. Regular exercise keeps you healthy.",
+        "display": "full-paragraph"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Exercise is good for your health",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! 🎯",
+            "audio": "Perfect! That's the main point"
+          }
+        },
+        {
+          "id": "b",
+          "text": "It makes your heart stronger",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "That's just one benefit",
+            "hint": "What sentence talks about ALL the benefits?",
+            "audio": "This is one detail, but what's the big idea?"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Regular exercise keeps you healthy",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Close! But there's a better answer",
+            "hint": "This repeats the main idea, but the first sentence says it more clearly",
+            "audio": "This is very close, but look at the first sentence"
+          }
+        }
+      ],
+      "adaptiveRouting": {
+        "firstTryCorrect": "advance-to-q3",
+        "secondTryCorrect": "reinforce-q2b",
+        "maxRetries": 2,
+        "afterMaxRetries": "simplify-to-q2-easy"
+      }
+    },
+
+    {
+      "id": "q2-easy",
+      "difficulty": 1,
+      "type": "multiple-choice",
+      "prompt": "Let's try an easier one. Which is the main idea?",
+      "context": {
+        "text": "Trees help the environment. They make oxygen. They provide shade.",
+        "display": "full-paragraph"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Trees help the environment",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Yes! 🎯",
+            "audio": "That's right! Trees helping the environment is the big idea"
+          }
+        },
+        {
+          "id": "b",
+          "text": "They make oxygen",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "That's how they help, but not the main idea",
+            "hint": "What's the biggest point?",
+            "audio": "This is one detail about trees"
+          }
+        }
+      ],
+      "adaptiveRouting": {
+        "firstTryCorrect": "advance-to-q2b",
+        "secondTryCorrect": "advance-to-q2b",
+        "maxRetries": 2,
+        "afterMaxRetries": "show-answer-advance"
+      }
+    },
+
+    {
+      "id": "q2b",
+      "difficulty": 2,
+      "type": "multiple-choice",
+      "prompt": "Which is the main idea?",
+      "context": {
+        "text": "Water is essential for life. Plants need water to grow. Animals drink water to survive. Humans need water every day. Without water, nothing can live.",
+        "display": "full-paragraph"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Water is essential for life",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! 🎯",
+            "audio": "Yes! That's the main idea"
+          }
+        },
+        {
+          "id": "b",
+          "text": "Plants need water to grow",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "That's one example",
+            "hint": "What covers plants, animals, AND humans?",
+            "audio": "This is just about plants"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Humans need water every day",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "That's one detail",
+            "hint": "Look for the biggest point",
+            "audio": "This is just about humans"
+          }
+        }
+      ],
+      "adaptiveRouting": {
+        "firstTryCorrect": "advance-to-q3",
+        "secondTryCorrect": "advance-to-q3",
+        "maxRetries": 2,
+        "afterMaxRetries": "show-answer-advance"
+      }
+    },
+
+    {
+      "id": "q3",
+      "difficulty": 2,
+      "type": "multiple-choice",
+      "prompt": "Last one! Which is the main idea?",
+      "context": {
+        "text": "Recycling helps protect the planet. It reduces waste in landfills. It saves natural resources. It uses less energy than making new products. Everyone should recycle.",
+        "display": "full-paragraph"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Recycling helps protect the planet",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Amazing! 🎯 You've got it!",
+            "audio": "Excellent! You really understand main ideas"
+          }
+        },
+        {
+          "id": "b",
+          "text": "It reduces waste in landfills",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "That's one way it helps",
+            "hint": "What's the biggest benefit?",
+            "audio": "This is one benefit, but what's the overall point?"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Everyone should recycle",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "That's the conclusion, not the main idea",
+            "hint": "The main idea tells you WHAT, not what you should do",
+            "audio": "This is the call to action, but what's the main point?"
+          }
+        }
+      ],
+      "adaptiveRouting": {
+        "firstTryCorrect": "complete-mastery",
+        "secondTryCorrect": "complete-good",
+        "maxRetries": 2,
+        "afterMaxRetries": "complete-needs-practice"
+      }
+    }
+  ],
+
+  "completion": {
+    "mastery": {
+      "trigger": "3+ correct, 2+ first-try",
+      "message": "You've mastered main ideas! 🎯⭐",
+      "badge": null,
+      "xp": 30,
+      "nextSession": {
+        "concept": "details",
+        "scheduledFor": "next-available"
+      },
+      "review": {
+        "concept": "main-idea",
+        "scheduledIn": "2-days"
+      }
+    },
+    "good": {
+      "trigger": "2-3 correct, some retries",
+      "message": "Great work! Keep practicing 👍",
+      "xp": 20,
+      "nextSession": {
+        "concept": "main-idea",
+        "scheduledFor": "tomorrow",
+        "difficulty": "same"
+      },
+      "review": {
+        "concept": "main-idea",
+        "scheduledIn": "1-day"
+      }
+    },
+    "needsPractice": {
+      "trigger": "<2 correct, multiple retries",
+      "message": "Good try! Let's practice more 💪",
+      "xp": 10,
+      "nextSession": {
+        "concept": "main-idea",
+        "scheduledFor": "8-hours",
+        "difficulty": "easier"
+      },
+      "review": {
+        "concept": "main-idea",
+        "scheduledIn": "4-hours"
+      }
+    }
+  },
+
+  "analytics": {
+    "trackPerformance": true,
+    "metrics": [
+      "questions-attempted",
+      "questions-correct",
+      "first-try-correct",
+      "retries-needed",
+      "hints-used",
+      "time-spent",
+      "difficulty-level-reached"
+    ]
+  }
+}

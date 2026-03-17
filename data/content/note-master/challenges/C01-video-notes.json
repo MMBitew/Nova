@@ -1,0 +1,135 @@
+{
+  "challengeId": "C01",
+  "title": "Video Notes Challenge",
+  "subtitle": "Watch 2-min video → create complete notes",
+  "icon": "🎥",
+  
+  "metadata": {
+    "type": "real-world-challenge",
+    "difficulty": "medium",
+    "unlocksAfter": "core-60",
+    "duration": "5 min",
+    "xpReward": 50,
+    "badgeReward": "video-note-master"
+  },
+
+  "instructions": {
+    "title": "Real Video Challenge",
+    "text": "Watch a real video and take notes like you would in class",
+    "audio": "This is a real-world challenge. Take notes as you watch.",
+    "tips": [
+      "You can watch twice",
+      "Use what you learned: keywords, bullets, symbols",
+      "Focus on main ideas and key facts"
+    ]
+  },
+
+  "video": {
+    "id": "solar-system",
+    "title": "How the Solar System Formed",
+    "duration": 120,
+    "url": "assets/videos/solar-system.mp4",
+    "thumbnail": "assets/videos/solar-system-thumb.jpg",
+    "captions": true,
+    "allowReplay": true,
+    "maxReplays": 2
+  },
+
+  "noteArea": {
+    "type": "freeform",
+    "placeholder": "Take notes here...",
+    "tools": [
+      "text",
+      "bullets",
+      "numbers",
+      "symbols",
+      "headings"
+    ],
+    "autosave": true
+  },
+
+  "evaluation": {
+    "type": "criteria-checklist",
+    "criteria": [
+      {
+        "id": "main-idea",
+        "label": "Captured main idea",
+        "points": 10,
+        "example": "How solar system formed from gas cloud"
+      },
+      {
+        "id": "key-facts",
+        "label": "Got 3+ key facts",
+        "points": 15,
+        "examples": [
+          "4.6 billion years ago",
+          "Started as gas cloud",
+          "Gravity pulled material together",
+          "Sun formed first",
+          "Planets formed from leftover material"
+        ]
+      },
+      {
+        "id": "organized",
+        "label": "Notes are organized",
+        "points": 10,
+        "hints": [
+          "Used headings",
+          "Used bullets or numbers",
+          "Grouped related ideas"
+        ]
+      },
+      {
+        "id": "symbols",
+        "label": "Used symbols",
+        "points": 5,
+        "examples": ["→", "★", "=", "?"]
+      },
+      {
+        "id": "short",
+        "label": "Notes are concise",
+        "points": 10,
+        "hint": "Used short phrases, not full sentences"
+      }
+    ],
+    "passingScore": 30,
+    "perfectScore": 50
+  },
+
+  "feedback": {
+    "perfect": {
+      "score": 50,
+      "message": "Outstanding! You're a note-taking pro! 🏆",
+      "badge": "video-note-master",
+      "audio": "Amazing work! Your notes are clear, organized, and complete."
+    },
+    "great": {
+      "scoreRange": [40, 49],
+      "message": "Great notes! Almost perfect! ✨",
+      "audio": "Excellent job! Your notes would really help you study."
+    },
+    "good": {
+      "scoreRange": [30, 39],
+      "message": "Good work! You passed the challenge! 👍",
+      "audio": "Nice job! You're getting better at note-taking."
+    },
+    "needsWork": {
+      "scoreRange": [0, 29],
+      "message": "Keep practicing! Try again after reviewing lessons 💪",
+      "audio": "Not quite yet. Review the lessons and try again.",
+      "suggestReview": ["L01", "L02", "L04", "L08"],
+      "allowRetry": true
+    }
+  },
+
+  "sampleNotes": {
+    "title": "Example Good Notes",
+    "content": "**How Solar System Formed**\n\n→ 4.6 billion years ago\n→ Started: giant gas cloud\n→ Gravity pulled material together\n\n**Formation:**\n1. Sun formed first (center)\n2. Planets from leftover material\n3. Rocky planets close, gas giants far\n\n★ Took millions of years"
+  },
+
+  "completion": {
+    "nextChallenge": "C02",
+    "unlocks": ["bonus-lessons"],
+    "shareableResult": true
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "lessonId": "L02-refined",
+  "version": "2.0",
+  "conceptId": "keywords",
+  "metadata": {
+    "title": "Keywords",
+    "subtitle": "Find important words",
+    "icon": "⭐",
+    "estimatedTime": "5-8 min",
+    "difficulty": "adaptive",
+    "type": "refined-lesson"
+  },
+
+  "introduce": {
+    "stepId": "introduce",
+    "type": "visual-intro",
+    "maxDuration": 30,
+    "content": {
+      "icon": "⭐",
+      "title": "Keywords = Important Words",
+      "subtitle": "Skip small words like 'the' and 'is'",
+      "example": {
+        "text": "The dog ran very fast down the street",
+        "keywords": ["dog", "ran", "fast", "street"],
+        "filler": ["The", "very", "down", "the"],
+        "visual": "highlight-keywords"
+      },
+      "audio": "Keywords are the important words. Skip the small words."
+    },
+    "autoAdvance": 15
+  },
+
+  "questions": [
+    {
+      "id": "q1",
+      "difficulty": 1,
+      "type": "tap-keywords",
+      "prompt": "Tap the keywords (important words)",
+      "context": {
+        "sentence": "The cat jumped on the table",
+        "words": ["The", "cat", "jumped", "on", "the", "table"],
+        "correctKeywords": ["cat", "jumped", "table"],
+        "filler": ["The", "on", "the"]
+      },
+      "feedback": {
+        "allCorrect": "Perfect! 🎯",
+        "mostCorrect": "Good! Just missed one",
+        "needsHelp": "Keywords are: cat, jumped, table"
+      },
+      "adaptiveRouting": {
+        "allCorrect": "advance-to-q2",
+        "mostCorrect": "reinforce-q1b",
+        "struggled": "simplify"
+      }
+    },
+    {
+      "id": "q2",
+      "difficulty": 2,
+      "type": "tap-keywords",
+      "prompt": "Tap the keywords",
+      "context": {
+        "sentence": "The Amazon rainforest produces 20% of Earth's oxygen",
+        "words": ["The", "Amazon", "rainforest", "produces", "20%", "of", "Earth's", "oxygen"],
+        "correctKeywords": ["Amazon", "rainforest", "produces", "20%", "oxygen"],
+        "filler": ["The", "of", "Earth's"]
+      },
+      "adaptiveRouting": {
+        "allCorrect": "advance-to-q3",
+        "mostCorrect": "reinforce",
+        "struggled": "simplify"
+      }
+    },
+    {
+      "id": "q3",
+      "difficulty": 2,
+      "type": "tap-keywords",
+      "prompt": "Last one! Tap keywords",
+      "context": {
+        "sentence": "Bees collect pollen from flowers to make honey",
+        "words": ["Bees", "collect", "pollen", "from", "flowers", "to", "make", "honey"],
+        "correctKeywords": ["Bees", "collect", "pollen", "flowers", "honey"],
+        "filler": ["from", "to", "make"]
+      }
+    }
+  ],
+
+  "completion": {
+    "mastery": {
+      "message": "You know keywords! ⭐",
+      "xp": 30,
+      "nextSession": "next-concept",
+      "review": "2-days"
+    },
+    "good": {
+      "message": "Good work! 👍",
+      "xp": 20,
+      "nextSession": "keywords-tomorrow"
+    },
+    "needsPractice": {
+      "message": "Keep trying! 💪",
+      "xp": 10,
+      "nextSession": "keywords-8hours"
+    }
+  }
+}

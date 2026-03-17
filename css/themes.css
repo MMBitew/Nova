@@ -1,0 +1,123 @@
+/* ==========================================
+   NOVA - THEME STYLES
+   Color theme variations
+   ========================================== */
+
+/* Default Theme: Nova Purple (Power Mode) */
+body {
+    --theme-primary: #6366f1;
+    --theme-primary-hover: #4f46e5;
+    --theme-primary-light: #818cf8;
+}
+
+/* Theme Classes */
+body.theme-power {
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --primary-light: #818cf8;
+    --primary-dark: #3730a3;
+}
+
+body.theme-chill {
+    --primary-color: #ff9500;
+    --primary-hover: #e68600;
+    --primary-light: #ffab33;
+    --primary-dark: #cc7700;
+}
+
+body.theme-focus {
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --primary-light: #60a5fa;
+    --primary-dark: #1d4ed8;
+}
+
+body.theme-party {
+    --primary-color: #d53f8c;
+    --primary-hover: #b83280;
+    --primary-light: #ed64a6;
+    --primary-dark: #97266d;
+}
+
+/* Theme Selector */
+.theme-selector {
+    display: flex;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: var(--surface-color);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.theme-option {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.theme-option:hover {
+    transform: scale(1.1);
+}
+
+.theme-option.active {
+    border-color: var(--text-primary);
+    transform: scale(1.15);
+}
+
+.theme-option.power {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.theme-option.chill {
+    background: linear-gradient(135deg, #ff9500 0%, #ffab33 100%);
+}
+
+.theme-option.focus {
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+}
+
+.theme-option.party {
+    background: linear-gradient(135deg, #d53f8c 0%, #ed64a6 100%);
+}
+
+/* Gradient Accents */
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+.gradient-border {
+    border-image: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) 1;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        --bg-color: #0f172a;
+        --surface-color: #1e293b;
+        --border-color: #334155;
+        --text-primary: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --text-tertiary: #94a3b8;
+    }
+}
+
+/* Theme Transitions */
+body,
+.header,
+.skill-card,
+.lesson-card,
+.btn {
+    transition: background-color var(--transition-base),
+                color var(--transition-base),
+                border-color var(--transition-base);
+}
