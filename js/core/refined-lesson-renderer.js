@@ -234,20 +234,38 @@ const RefinedLessonRenderer = {
     /**
      * Show feedback
      */
-    showFeedback(option, isCorrect) {
-        const feedback = isCorrect ? option.feedback.correct : option.feedback.incorrect;
+    /**
+ * Show feedback
+ */
+showFeedback(option, isCorrect) {
+    const feedback = isCorrect ? option.feedback.correct : option.feedback.incorrect;
+    const container = document.getElementById('main-content');
 
-        NovaModal.show(
-            isCorrect ? '✓ Correct!' : 'Not quite',
-            `<p style="font-size: 18px; text-align: center;">${feedback}</p>`,
-            [
-                {
-                    text: 'Next →',
-                    class: 'btn-primary',
-                    onclick: 'RefinedLessonRenderer.handleNext(); NovaModal.close();'
-                }
-            ]
-        );
+    // Show feedback directly on screen
+    container.innerHTML = `
+        <div class="step-card" style="text-align: center;">
+            <div style="font-size: 64px; margin-bottom: 24px;">
+                ${isCorrect ? '✓' : '↻'}
+            </div>
+            <h2 style="font-size: 32px; margin-bottom: 16px; color: ${isCorrect ? 'var(--success-color)' : 'var(--warning-color)'};">
+                ${isCorrect ? 'Correct!' : 'Try Again'}
+            </h2>
+            <p style="font-size: 18px; color: var(--text-secondary); margin-bottom: 32px;">
+                ${feedback}
+            </p>
+            <button class="btn btn-primary" onclick="RefinedLessonRenderer.handleNext()" style="font-size: 18px; padding: 16px 32px;">
+                ${isCorrect ? 'Next →' : 'Continue'}
+            </button>
+        </div>
+    `;
+
+    // Auto-advance after 2 seconds if correct
+    if (isCorrect) {
+        setTimeout(() => {
+            this.handleNext();
+        }, 2000);
+    }
+}
 
         // Audio feedback
         if (NovaState.user.audioEnabled && option.feedback.audio) {
