@@ -237,47 +237,78 @@ const RefinedLessonRenderer = {
     /**
  * Show feedback
  */
-showFeedback(option, isCorrect) {
-    const feedback = isCorrect ? option.feedback.correct : option.feedback.incorrect;
-    const container = document.getElementById('main-content');
+/**
+ * Handle answer selection
+ */
+selectAnswer(optionId, isCorrect) {
+    const question = this.currentLesson.questions[this.currentQuestionIndex];
+    const option = question.options.find(o => o.id === optionId);
 
-    // Show feedback directly on screen
-    container.innerHTML = `
-        <div class="step-card" style="text-align: center;">
-            <div style="font-size: 64px; margin-bottom: 24px;">
-                ${isCorrect ? '✓' : '↻'}
-            </div>
-            <h2 style="font-size: 32px; margin-bottom: 16px; color: ${isCorrect ? 'var(--success-color)' : 'var(--warning-color)'};">
-                ${isCorrect ? 'Correct!' : 'Try Again'}
-            </h2>
-            <p style="font-size: 18px; color: var(--text-secondary); margin-bottom: 32px;">
-                ${feedback}
-            </p>
-            <button class="btn btn-primary" onclick="RefinedLessonRenderer.handleNext()" style="font-size: 18px; padding: 16px 32px;">
-                ${isCorrect ? 'Next →' : 'Continue'}
-            </button>
-        </div>
-    `;
-
-    // Auto-advance after 2 seconds if correct
+    // Track performance
     if (isCorrect) {
+        this.performance.questionsCorrect++;
+        if (this.performance.retriesNeeded === 0) {
+            this.performance.firstTryCorrect++;
+        }
+    } else {
+        this.performance.retriesNeeded++;
+    }
+
+    // Show feedback
+    this.showFeedback(option, isCorrect);
+}
+
+/**
+ * Show feedback and auto-advance
+ */
+showFeedback(option, isCorrect) {
+    // Disable all buttons
+    document.querySelectorAll('.option-button').forEach(btn => {
+        btn.disabled = true;
+        btn.style.pointerEvents = 'none';
+    });
+
+    // Highlight selected answer
+    const selectedButton = document.querySelector(`[data-option-id="${option.id}"]`);
+    if (selectedButton) {
+        selectedButton.style.borderColor = isCorrect ? 'var(--success-color)' : 'var(--error-color)';
+        selectedButton.style.background = isCorrect ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)';
+        selectedButton.style.fontWeight = 'bold';
+    }
+
+    const feedback = isCorrect ? option.feedback.correct : option.feedback.incorrect;
+
+    // Show toast feedback
+    if (isCorrect) {
+        NovaToast.success('✓ ' + feedback);
+        
+        // Auto-advance after 1.5 seconds
         setTimeout(() => {
             this.handleNext();
-        }, 2000);
+        }, 1500);
+    } else {
+        NovaToast.warning('↻ ' + feedback);
+        
+        // Re-enable other buttons for retry after 1.5 seconds
+        setTimeout(() => {
+            document.querySelectorAll('.option-button').forEach(btn => {
+                if (btn.dataset.optionId !== option.id) {
+                    btn.disabled = false;
+                    btn.style.pointerEvents = 'auto';
+                }
+            });
+        }, 1500);
     }
 }
 
-        // Audio feedback
-        if (NovaState.user.audioEnabled && option.feedback.audio) {
-            NovaAudio.speak(option.feedback.audio);
-        }
-
-        // Play sound
-        if (isCorrect) {
-            NovaAudio.playSuccess();
-        }
-    },
-
+/**
+ * Handle next question
+ */
+handleNext() {
+    // For now, just advance to next question
+    // In full version, this would use adaptive routing
+    this.showQuestion(this.currentQuestionIndex + 1);
+}
     /**
      * Handle next question
      */
