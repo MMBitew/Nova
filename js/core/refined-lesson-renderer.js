@@ -42,9 +42,12 @@ const RefinedLessonRenderer = {
             }
 
         } catch (error) {
-            console.error('Failed to load refined lesson:', error);
+        console.error('Failed to load refined lesson:', error);
+        // Don't show toast on initial load, only on actual errors
+        if (error.message !== 'HTTP error! status: 404') {
             NovaToast.error('Could not load lesson');
         }
+    }
     },
 
     /**
@@ -144,14 +147,24 @@ const RefinedLessonRenderer = {
     /**
      * Render multiple choice question
      */
-    renderMultipleChoice(question) {
-        const container = document.getElementById('main-content');
+   renderMultipleChoice(question) {
+    const container = document.getElementById('main-content');
+    
+    const totalQuestions = this.currentLesson.questions.length;
+    const currentQuestion = this.currentQuestionIndex + 1;
+    const progressPercent = Math.round((currentQuestion / totalQuestions) * 100);
 
-        container.innerHTML = `
-            <div class="step-card">
-                <div class="progress-indicator">
-                    Question ${this.currentQuestionIndex + 1} of ${this.currentLesson.questions.length}
+    container.innerHTML = `
+        <div class="step-card">
+            <!-- Progress Bar -->
+            <div style="margin-bottom: 24px;">
+                <div style="height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                    <div style="height: 100%; width: ${progressPercent}%; background: var(--primary-color); transition: width 0.3s ease;"></div>
                 </div>
+                <div style="font-size: 12px; color: var(--text-secondary); margin-top: 8px; text-align: center;">
+                    ${currentQuestion} of ${totalQuestions}
+                </div>
+            </div>
 
                 <div class="practice-prompt">${question.prompt}</div>
 
