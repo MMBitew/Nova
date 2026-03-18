@@ -174,15 +174,28 @@ const RefinedLessonRenderer = {
                     </div>
                 ` : ''}
 
-                <div class="options-container" style="margin-top: 24px;">
-                    ${question.options.map((opt, i) => `
-                        <div class="example-option" 
-                             data-option-id="${opt.id}"
-                             onclick="RefinedLessonRenderer.selectAnswer('${opt.id}', ${opt.isCorrect})">
-                            ${opt.text}
-                        </div>
-                    `).join('')}
-                </div>
+               <div class="options-container" style="margin-top: 24px;">
+    ${question.options.map((opt, i) => `
+        <button class="option-button" 
+                data-option-id="${opt.id}"
+                onclick="RefinedLessonRenderer.selectAnswer('${opt.id}', ${opt.isCorrect})"
+                style="width: 100%; padding: 16px; margin-bottom: 12px; border: 2px solid var(--border-color); border-radius: 12px; background: var(--surface-color); cursor: pointer; text-align: left; font-size: 16px; transition: all 0.2s ease;">
+            ${opt.text}
+        </button>
+    `).join('')}
+</div>
+
+<style>
+.option-button:hover {
+    border-color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.05);
+    transform: translateX(4px);
+}
+
+.option-button:active {
+    transform: scale(0.98);
+}
+</style>
             </div>
         `;
     },
