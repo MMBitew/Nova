@@ -7,14 +7,20 @@ const NovaRouter = {
     routes: {
     'home': () => NovaApp.showHome(),
     'note-master': () => NoteMaster.init(),
-    'note-master-refined': () => {
-        if (typeof NovaRepetition !== 'undefined') {
-            NovaRepetition.showDailySessionPrompt();
+   'note-master-refined': () => {
+    if (typeof NovaRepetition !== 'undefined') {
+        // Check if there's an existing session
+        const session = NovaStorage.get('current-session');
+        if (!session) {
+            NovaRepetition.startDailySession();
         } else {
-            console.error('NovaRepetition not loaded!');
-            NovaModal.alert('Error', 'Refined system not available. Please reload the page.');
+            NovaRepetition.startSessionItem(0);
         }
-    },
+    } else {
+        console.error('NovaRepetition not loaded!');
+        alert('Refined system not available. Please reload the page.');
+    }
+},
     'settings': () => NovaApp.showSettings()
 },
 
