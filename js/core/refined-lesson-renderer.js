@@ -393,12 +393,183 @@ const RefinedLessonRenderer = {
     },
  
     /**
-     * Render tap keywords question (placeholder)
-     */
-    renderTapKeywords(question) {
-        this.renderMultipleChoice(question);
-    },
- 
+ * Render tap keywords question
+ */
+renderTapKeywords(question) {
+    const container = document.getElementById('main-content');
+    
+    const totalQuestions = this.currentLesson.questions.length;
+    const currentQuestion = this.currentQuestionIndex + 1;
+    const progressPercent = Math.round((currentQuestion / totalQuestions) * 100);
+
+    // Track selected keywords
+    if (!this.selectedKeywords) {
+        this.selectedKeywords = [];
+    }
+    this.selectedKeywords = [];
+
+    container.innerHTML = `
+        <div class="step-card">
+            <!-- Progress Bar -->
+            <div style="margin-bottom: 24px;">
+                <div style="height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                    <div style="height: 100%; width: ${progressPercent}%; background: var(--primary-color); transition: width 0.3s ease;"></div>
+                </div>
+                <div style="font-size: 12px; color: var(--text-secondary); margin-top: 8px; text-align: center;">
+                    ${currentQuestion} of ${totalQuestions}
+                </div>
+            </div>
+
+            <div class="practice-prompt" style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">
+                ${question.prompt}
+            </div>
+
+            <div style="font-size: 14px; color: var(--text-secondary); margin-bottom: 20px;">
+                Tap only the keywords you'd write in notes
+            </div>
+
+            <!-- Word Buttons -->
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
+                ${question.context.words.map((word, idx) => {
+                    const isKeyword = question.context.correctKeywords.includes(word);
+                    return `
+                        <button 
+                            class="word-button" 
+                            data-word="${word}"
+                            data-is-keyword="${isKeyword}"
+                            onclick="RefinedLessonRenderer.toggleKeyword(this, '${word}', ${isKeyword})"
+                            style="padding: 12px 20px; border: 2px solid var(--border-color); border-radius: 8px; background: var(--surface-color); cursor: pointer; font-size: 16px; transition: all 0.2s ease;">
+                            ${word}
+                        </button>
+                    `;
+                }).join('')}
+            </div>
+
+            <!-- Hint -->
+            <div style="font-size: 14px; color: var(--text-secondary); text-align: center; margin-bottom: 20px;">
+                Skip: ${question.context.filler.join(', ')}
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+                id="submit-keywords-btn"
+                class="btn btn-primary" 
+                onclick="RefinedLessonRenderer.checkKeywords()"
+                style="width: 100%; font-size: 18px; padding: 16px;">
+                Check Answer →
+            </button>
+        </div>
+
+        <style>
+        .word-button:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .word-button.selected {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .word-button.correct {
+            background: var(--success-color);
+            color: white;
+            border-color: var(--success-color);
+        }
+        
+        .word-button.incorrect {
+            background: var(--error-color);
+            color: white;
+            border-color: var(--error-color);
+        }
+        
+        .word-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        </style>
+    `;
+}
+ /**
+ * Toggle keyword selection
+ */
+toggleKeyword(button, word, isKeyword) {
+    if (!this.selectedKeywords) {
+        this.selectedKeywords = [];
+    }
+
+    const index = this.selectedKeywords.indexOf(word);
+    
+    if (index > -1) {
+        // Already selected - remove it
+        this.selectedKeywords.splice(index, 1);
+        button.classList.remove('selected');
+    } else {
+        // Not selected - add it
+        this.selectedKeywords.push(word);
+        button.classList.add('selected');
+    }
+},
+
+/**
+ * Check keywords answer
+ */
+checkKeywords() {
+    const question = this.currentLesson.questions[this.currentQuestionIndex];
+    const correctKeywords = question.context.correctKeywords;
+    
+    // Check how many are correct
+    const correctCount = this.selectedKeywords.filter(word => 
+        correctKeywords.includes(word)
+    ).length;
+    
+    const totalCorrect = correctKeywords.length;
+    const accuracy = correctCount / totalCorrect;
+    
+    // Disable all buttons
+    document.querySelectorAll('.word-button').forEach(btn => {
+        btn.disabled = true;
+        const word = btn.dataset.word;
+        const isKeyword = btn.dataset.isKeyword === 'true';
+        
+        // Show correct/incorrect
+        if (isKeyword) {
+            btn.classList.add('correct');
+        } else if (this.selectedKeywords.includes(word)) {
+            btn.classList.add('incorrect');
+        }
+    });
+    
+    // Hide submit button
+    document.getElementById('submit-keywords-btn').style.display = 'none';
+    
+    // Determine if correct
+    const isCorrect = accuracy >= 0.8; // 80% or more correct
+    
+    // Track performance
+    if (isCorrect) {
+        this.performance.questionsCorrect++;
+        if (this.performance.retriesNeeded === 0) {
+            this.performance.firstTryCorrect++;
+        }
+    } else {
+        this.performance.retriesNeeded++;
+    }
+    
+    // Show feedback
+    if (isCorrect) {
+        NovaToast.success(`✓ Great! You got ${correctCount} out of ${totalCorrect}`);
+        setTimeout(() => {
+            this.handleNext();
+        }, 2000);
+    } else {
+        NovaToast.warning(`↻ You got ${correctCount} out of ${totalCorrect}. Green = keywords to keep`);
+        setTimeout(() => {
+            this.handleNext();
+        }, 3000);
+    }
+}
     /**
      * Render choose shortest question (placeholder)
      */
