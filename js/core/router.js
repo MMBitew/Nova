@@ -5,10 +5,18 @@
 
 const NovaRouter = {
     routes: {
-        'home': () => NovaApp.showHome(),
-        'note-master': () => NoteMaster.init(),
-        'settings': () => NovaApp.showSettings()
+    'home': () => NovaApp.showHome(),
+    'note-master': () => NoteMaster.init(),
+    'note-master-refined': () => {
+        if (typeof NovaRepetition !== 'undefined') {
+            NovaRepetition.showDailySessionPrompt();
+        } else {
+            console.error('NovaRepetition not loaded!');
+            NovaModal.alert('Error', 'Refined system not available. Please reload the page.');
+        }
     },
+    'settings': () => NovaApp.showSettings()
+},
 
     currentRoute: null,
 
