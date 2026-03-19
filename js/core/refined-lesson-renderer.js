@@ -2,10 +2,11 @@
  * NOVA - REFINED LESSON RENDERER
  * Renders Introduce → Ask → Evaluate → Adapt lessons
  */
- 
+
 const RefinedLessonRenderer = {
     currentLesson: null,
     currentQuestionIndex: 0,
+    selectedKeywords: [],
     performance: {
         questionsAttempted: 0,
         questionsCorrect: 0,
@@ -14,7 +15,7 @@ const RefinedLessonRenderer = {
         hintsUsed: 0,
         startTime: Date.now()
     },
- 
+
     /**
      * Load and start a refined lesson
      */
@@ -40,17 +41,16 @@ const RefinedLessonRenderer = {
                 startTime: Date.now(),
                 isReview
             };
- 
+
             // Start with intro or skip to questions if review
             if (isReview) {
                 this.showQuestion(0);
             } else {
                 this.showIntro();
             }
- 
+
         } catch (error) {
             console.error('Failed to load refined lesson:', error);
-            // Only show error if not a 404 on initial load
             if (error.message.includes('404')) {
                 console.warn('Lesson file not found - this is normal on page load');
             } else {
@@ -58,21 +58,21 @@ const RefinedLessonRenderer = {
             }
         }
     },
- 
+
     /**
      * Get concept index for file lookup
      */
     getConceptIndex(conceptId) {
         return ['main-idea', 'keywords', 'short-notes', 'bullets', 'symbols'].indexOf(conceptId);
     },
- 
+
     /**
      * Show intro step
      */
     showIntro() {
         const intro = this.currentLesson.introduce;
         const container = document.getElementById('main-content');
- 
+
         container.innerHTML = `
             <div class="step-card" style="text-align: center;">
                 <div class="step-icon" style="font-size: 64px; margin-bottom: 16px;">${intro.content.icon}</div>
@@ -92,14 +92,14 @@ const RefinedLessonRenderer = {
                         ` : ''}
                     </div>
                 ` : ''}
- 
+
                 <button class="btn btn-primary" onclick="RefinedLessonRenderer.startQuestions()" style="font-size: 18px; padding: 16px 32px;">
                     Got it! →
                 </button>
             </div>
         `;
     },
- 
+
     /**
      * Start questions
      */
@@ -107,7 +107,7 @@ const RefinedLessonRenderer = {
         this.currentQuestionIndex = 0;
         this.showQuestion(0);
     },
- 
+
     /**
      * Show a question
      */
@@ -118,10 +118,10 @@ const RefinedLessonRenderer = {
             this.completeLesson();
             return;
         }
- 
+
         const question = questions[index];
         this.currentQuestionIndex = index;
- 
+
         // Render based on question type
         switch (question.type) {
             case 'multiple-choice':
@@ -136,10 +136,10 @@ const RefinedLessonRenderer = {
             default:
                 this.renderMultipleChoice(question);
         }
- 
+
         this.performance.questionsAttempted++;
     },
- 
+
     /**
      * Render multiple choice question
      */
@@ -149,10 +149,9 @@ const RefinedLessonRenderer = {
         const totalQuestions = this.currentLesson.questions.length;
         const currentQuestion = this.currentQuestionIndex + 1;
         const progressPercent = Math.round((currentQuestion / totalQuestions) * 100);
- 
+
         container.innerHTML = `
             <div class="step-card">
-                <!-- Progress Bar -->
                 <div style="margin-bottom: 24px;">
                     <div style="height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
                         <div style="height: 100%; width: ${progressPercent}%; background: var(--primary-color); transition: width 0.3s ease;"></div>
@@ -161,17 +160,17 @@ const RefinedLessonRenderer = {
                         ${currentQuestion} of ${totalQuestions}
                     </div>
                 </div>
- 
+
                 <div class="practice-prompt" style="font-size: 20px; font-weight: 600; margin-bottom: 20px;">
                     ${question.prompt}
                 </div>
- 
+
                 ${question.context ? `
                     <div class="sentence-container" style="background: rgba(99, 102, 241, 0.05); padding: 16px; border-radius: 12px; margin-bottom: 20px; line-height: 1.6;">
                         ${question.context.text}
                     </div>
                 ` : ''}
- 
+
                 <div class="options-container" style="margin-top: 24px;">
                     ${question.options.map((opt, i) => `
                         <button class="option-button" 
@@ -202,15 +201,145 @@ const RefinedLessonRenderer = {
             </style>
         `;
     },
- 
+
     /**
-     * Handle answer selection
+     * Render tap keywords question
      */
-    selectAnswer(optionId, isCorrect) {
+    renderTapKeywords(question) {
+        const container = document.getElementById('main-content');
+        
+        const totalQuestions = this.currentLesson.questions.length;
+        const currentQuestion = this.currentQuestionIndex + 1;
+        const progressPercent = Math.round((currentQuestion / totalQuestions) * 100);
+
+        // Reset selected keywords
+        this.selectedKeywords = [];
+
+        container.innerHTML = `
+            <div class="step-card">
+                <div style="margin-bottom: 24px;">
+                    <div style="height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                        <div style="height: 100%; width: ${progressPercent}%; background: var(--primary-color); transition: width 0.3s ease;"></div>
+                    </div>
+                    <div style="font-size: 12px; color: var(--text-secondary); margin-top: 8px; text-align: center;">
+                        ${currentQuestion} of ${totalQuestions}
+                    </div>
+                </div>
+
+                <div class="practice-prompt" style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">
+                    ${question.prompt}
+                </div>
+
+                <div style="font-size: 14px; color: var(--text-secondary); margin-bottom: 20px;">
+                    Tap only the keywords you'd write in notes
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
+                    ${question.context.words.map((word, idx) => {
+                        const isKeyword = question.context.correctKeywords.includes(word);
+                        return `
+                            <button 
+                                class="word-button" 
+                                data-word="${word}"
+                                data-is-keyword="${isKeyword}"
+                                onclick="RefinedLessonRenderer.toggleKeyword(this, '${word}', ${isKeyword})"
+                                style="padding: 12px 20px; border: 2px solid var(--border-color); border-radius: 8px; background: var(--surface-color); cursor: pointer; font-size: 16px; transition: all 0.2s ease;">
+                                ${word}
+                            </button>
+                        `;
+                    }).join('')}
+                </div>
+
+                <div style="font-size: 14px; color: var(--text-secondary); text-align: center; margin-bottom: 20px;">
+                    Skip: ${question.context.filler.join(', ')}
+                </div>
+
+                <button 
+                    id="submit-keywords-btn"
+                    class="btn btn-primary" 
+                    onclick="RefinedLessonRenderer.checkKeywords()"
+                    style="width: 100%; font-size: 18px; padding: 16px;">
+                    Next →
+                </button>
+            </div>
+
+            <style>
+            .word-button:hover {
+                border-color: var(--primary-color);
+                transform: translateY(-2px);
+            }
+            
+            .word-button.selected {
+                background: var(--primary-color);
+                color: white;
+                border-color: var(--primary-color);
+            }
+            
+            .word-button.correct {
+                background: var(--success-color);
+                color: white;
+                border-color: var(--success-color);
+            }
+            
+            .word-button.incorrect {
+                background: var(--error-color);
+                color: white;
+                border-color: var(--error-color);
+            }
+            
+            .word-button:disabled {
+                cursor: not-allowed;
+                opacity: 0.6;
+            }
+            </style>
+        `;
+    },
+
+    /**
+     * Toggle keyword selection
+     */
+    toggleKeyword(button, word, isKeyword) {
+        const index = this.selectedKeywords.indexOf(word);
+        
+        if (index > -1) {
+            this.selectedKeywords.splice(index, 1);
+            button.classList.remove('selected');
+        } else {
+            this.selectedKeywords.push(word);
+            button.classList.add('selected');
+        }
+    },
+
+    /**
+     * Check keywords answer
+     */
+    checkKeywords() {
         const question = this.currentLesson.questions[this.currentQuestionIndex];
-        const option = question.options.find(o => o.id === optionId);
- 
-        // Track performance
+        const correctKeywords = question.context.correctKeywords;
+        
+        const correctCount = this.selectedKeywords.filter(word => 
+            correctKeywords.includes(word)
+        ).length;
+        
+        const totalCorrect = correctKeywords.length;
+        const accuracy = correctCount / totalCorrect;
+        
+        document.querySelectorAll('.word-button').forEach(btn => {
+            btn.disabled = true;
+            const word = btn.dataset.word;
+            const isKeyword = btn.dataset.isKeyword === 'true';
+            
+            if (isKeyword) {
+                btn.classList.add('correct');
+            } else if (this.selectedKeywords.includes(word)) {
+                btn.classList.add('incorrect');
+            }
+        });
+        
+        document.getElementById('submit-keywords-btn').style.display = 'none';
+        
+        const isCorrect = accuracy >= 0.8;
+        
         if (isCorrect) {
             this.performance.questionsCorrect++;
             if (this.performance.retriesNeeded === 0) {
@@ -219,43 +348,64 @@ const RefinedLessonRenderer = {
         } else {
             this.performance.retriesNeeded++;
         }
- 
-        // Show feedback
+        
+        if (isCorrect) {
+            NovaToast.success(`✓ Great! You got ${correctCount} out of ${totalCorrect}`);
+            setTimeout(() => {
+                this.handleNext();
+            }, 2000);
+        } else {
+            NovaToast.warning(`↻ You got ${correctCount} out of ${totalCorrect}. Green = keywords`);
+            setTimeout(() => {
+                this.handleNext();
+            }, 3000);
+        }
+    },
+
+    /**
+     * Handle answer selection
+     */
+    selectAnswer(optionId, isCorrect) {
+        const question = this.currentLesson.questions[this.currentQuestionIndex];
+        const option = question.options.find(o => o.id === optionId);
+
+        if (isCorrect) {
+            this.performance.questionsCorrect++;
+            if (this.performance.retriesNeeded === 0) {
+                this.performance.firstTryCorrect++;
+            }
+        } else {
+            this.performance.retriesNeeded++;
+        }
+
         this.showFeedback(option, isCorrect);
     },
- 
+
     /**
      * Show feedback and auto-advance
      */
     showFeedback(option, isCorrect) {
-        // Disable all buttons
         document.querySelectorAll('.option-button').forEach(btn => {
             btn.disabled = true;
             btn.style.pointerEvents = 'none';
         });
- 
-        // Highlight selected answer
+
         const selectedButton = document.querySelector(`[data-option-id="${option.id}"]`);
         if (selectedButton) {
             selectedButton.style.borderColor = isCorrect ? 'var(--success-color)' : 'var(--error-color)';
             selectedButton.style.background = isCorrect ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)';
             selectedButton.style.fontWeight = 'bold';
         }
- 
+
         const feedback = isCorrect ? option.feedback.correct : option.feedback.incorrect;
- 
-        // Show toast feedback
+
         if (isCorrect) {
             NovaToast.success('✓ ' + feedback);
-            
-            // Auto-advance after 1.5 seconds
             setTimeout(() => {
                 this.handleNext();
             }, 1500);
         } else {
             NovaToast.warning('↻ ' + feedback);
-            
-            // Re-enable other buttons for retry after 1.5 seconds
             setTimeout(() => {
                 document.querySelectorAll('.option-button').forEach(btn => {
                     if (btn.dataset.optionId !== option.id) {
@@ -266,39 +416,32 @@ const RefinedLessonRenderer = {
             }, 1500);
         }
     },
- 
+
     /**
      * Handle next question
      */
     handleNext() {
         this.showQuestion(this.currentQuestionIndex + 1);
     },
- 
+
     /**
      * Complete lesson
      */
     completeLesson() {
         const duration = Math.floor((Date.now() - this.performance.startTime) / 1000);
         const accuracy = this.performance.questionsCorrect / this.performance.questionsAttempted;
- 
-        // Determine performance level
+
         let completionType = 'needsPractice';
         if (accuracy >= 0.8 && this.performance.firstTryCorrect >= 2) {
             completionType = 'mastery';
         } else if (accuracy >= 0.5) {
             completionType = 'good';
         }
- 
+
         const completion = this.currentLesson.completion[completionType];
- 
-        // Award XP
-        NovaGamification.awardXP(
-            completion.xp,
-            'note-master',
-            'refined-lesson'
-        );
- 
-        // Schedule review
+
+        NovaGamification.awardXP(completion.xp, 'note-master', 'refined-lesson');
+
         const reviewSchedule = NovaRepetition.scheduleReview(
             this.currentLesson.conceptId,
             {
@@ -307,8 +450,7 @@ const RefinedLessonRenderer = {
                 firstTryCorrect: this.performance.firstTryCorrect
             }
         );
- 
-        // Track analytics
+
         NovaAnalytics.track('refined_lesson_complete', {
             conceptId: this.currentLesson.conceptId,
             performance: completionType,
@@ -316,19 +458,17 @@ const RefinedLessonRenderer = {
             duration,
             ...this.performance
         });
- 
-        // Show completion
+
         this.showCompletion(completion, reviewSchedule);
     },
- 
+
     /**
      * Show completion screen
      */
     showCompletion(completion, reviewSchedule) {
         const container = document.getElementById('main-content');
- 
         const reviewText = this.getReviewTimeText(reviewSchedule.hoursUntilReview);
- 
+
         container.innerHTML = `
             <div class="completion-screen" style="text-align: center; padding: 40px 20px;">
                 <div class="completion-icon" style="font-size: 80px; margin-bottom: 16px;">
@@ -346,7 +486,7 @@ const RefinedLessonRenderer = {
                         <div class="stat-label" style="font-size: 14px; color: var(--text-secondary); margin-top: 4px;">XP</div>
                     </div>
                 </div>
- 
+
                 <div style="margin: 24px 0; padding: 16px; background: var(--bg-color); border-radius: 12px;">
                     <div style="font-size: 14px; color: var(--text-secondary); margin-bottom: 4px;">
                         Review scheduled:
@@ -355,7 +495,7 @@ const RefinedLessonRenderer = {
                         ${reviewText}
                     </div>
                 </div>
- 
+
                 <div class="btn-container" style="margin-top: 32px;">
                     <button class="btn btn-primary" onclick="RefinedLessonRenderer.continueSession()" style="font-size: 18px; padding: 16px 32px;">
                         Continue
@@ -364,7 +504,7 @@ const RefinedLessonRenderer = {
             </div>
         `;
     },
- 
+
     /**
      * Get friendly review time text
      */
@@ -379,7 +519,7 @@ const RefinedLessonRenderer = {
             return `In ${weeks} week${weeks > 1 ? 's' : ''}`;
         }
     },
- 
+
     /**
      * Continue to next session item
      */
@@ -391,194 +531,15 @@ const RefinedLessonRenderer = {
             NovaRouter.navigate('home');
         }
     },
- 
+
     /**
- * Render tap keywords question
- */
-renderTapKeywords(question) {
-    const container = document.getElementById('main-content');
-    
-    const totalQuestions = this.currentLesson.questions.length;
-    const currentQuestion = this.currentQuestionIndex + 1;
-    const progressPercent = Math.round((currentQuestion / totalQuestions) * 100);
-
-    // Track selected keywords
-    if (!this.selectedKeywords) {
-        this.selectedKeywords = [];
-    }
-    this.selectedKeywords = [];
-
-    container.innerHTML = `
-        <div class="step-card">
-            <!-- Progress Bar -->
-            <div style="margin-bottom: 24px;">
-                <div style="height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
-                    <div style="height: 100%; width: ${progressPercent}%; background: var(--primary-color); transition: width 0.3s ease;"></div>
-                </div>
-                <div style="font-size: 12px; color: var(--text-secondary); margin-top: 8px; text-align: center;">
-                    ${currentQuestion} of ${totalQuestions}
-                </div>
-            </div>
-
-            <div class="practice-prompt" style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">
-                ${question.prompt}
-            </div>
-
-            <div style="font-size: 14px; color: var(--text-secondary); margin-bottom: 20px;">
-                Tap only the keywords you'd write in notes
-            </div>
-
-            <!-- Word Buttons -->
-            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
-                ${question.context.words.map((word, idx) => {
-                    const isKeyword = question.context.correctKeywords.includes(word);
-                    return `
-                        <button 
-                            class="word-button" 
-                            data-word="${word}"
-                            data-is-keyword="${isKeyword}"
-                            onclick="RefinedLessonRenderer.toggleKeyword(this, '${word}', ${isKeyword})"
-                            style="padding: 12px 20px; border: 2px solid var(--border-color); border-radius: 8px; background: var(--surface-color); cursor: pointer; font-size: 16px; transition: all 0.2s ease;">
-                            ${word}
-                        </button>
-                    `;
-                }).join('')}
-            </div>
-
-            <!-- Hint -->
-            <div style="font-size: 14px; color: var(--text-secondary); text-align: center; margin-bottom: 20px;">
-                Skip: ${question.context.filler.join(', ')}
-            </div>
-
-            <!-- Submit Button -->
-            <button 
-                id="submit-keywords-btn"
-                class="btn btn-primary" 
-                onclick="RefinedLessonRenderer.checkKeywords()"
-                style="width: 100%; font-size: 18px; padding: 16px;">
-                Check Answer →
-            </button>
-        </div>
-
-        <style>
-        .word-button:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-        
-        .word-button.selected {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-        
-        .word-button.correct {
-            background: var(--success-color);
-            color: white;
-            border-color: var(--success-color);
-        }
-        
-        .word-button.incorrect {
-            background: var(--error-color);
-            color: white;
-            border-color: var(--error-color);
-        }
-        
-        .word-button:disabled {
-            cursor: not-allowed;
-            opacity: 0.6;
-        }
-        </style>
-    `;
-}
- /**
- * Toggle keyword selection
- */
-toggleKeyword(button, word, isKeyword) {
-    if (!this.selectedKeywords) {
-        this.selectedKeywords = [];
-    }
-
-    const index = this.selectedKeywords.indexOf(word);
-    
-    if (index > -1) {
-        // Already selected - remove it
-        this.selectedKeywords.splice(index, 1);
-        button.classList.remove('selected');
-    } else {
-        // Not selected - add it
-        this.selectedKeywords.push(word);
-        button.classList.add('selected');
-    }
-},
-
-/**
- * Check keywords answer
- */
-checkKeywords() {
-    const question = this.currentLesson.questions[this.currentQuestionIndex];
-    const correctKeywords = question.context.correctKeywords;
-    
-    // Check how many are correct
-    const correctCount = this.selectedKeywords.filter(word => 
-        correctKeywords.includes(word)
-    ).length;
-    
-    const totalCorrect = correctKeywords.length;
-    const accuracy = correctCount / totalCorrect;
-    
-    // Disable all buttons
-    document.querySelectorAll('.word-button').forEach(btn => {
-        btn.disabled = true;
-        const word = btn.dataset.word;
-        const isKeyword = btn.dataset.isKeyword === 'true';
-        
-        // Show correct/incorrect
-        if (isKeyword) {
-            btn.classList.add('correct');
-        } else if (this.selectedKeywords.includes(word)) {
-            btn.classList.add('incorrect');
-        }
-    });
-    
-    // Hide submit button
-    document.getElementById('submit-keywords-btn').style.display = 'none';
-    
-    // Determine if correct
-    const isCorrect = accuracy >= 0.8; // 80% or more correct
-    
-    // Track performance
-    if (isCorrect) {
-        this.performance.questionsCorrect++;
-        if (this.performance.retriesNeeded === 0) {
-            this.performance.firstTryCorrect++;
-        }
-    } else {
-        this.performance.retriesNeeded++;
-    }
-    
-    // Show feedback
-    if (isCorrect) {
-        NovaToast.success(`✓ Great! You got ${correctCount} out of ${totalCorrect}`);
-        setTimeout(() => {
-            this.handleNext();
-        }, 2000);
-    } else {
-        NovaToast.warning(`↻ You got ${correctCount} out of ${totalCorrect}. Green = keywords to keep`);
-        setTimeout(() => {
-            this.handleNext();
-        }, 3000);
-    }
-}
-    /**
-     * Render choose shortest question (placeholder)
+     * Render choose shortest question
      */
     renderChooseShortest(question) {
         this.renderMultipleChoice(question);
     }
 };
- 
-// Export for module systems
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = RefinedLessonRenderer;
 }
