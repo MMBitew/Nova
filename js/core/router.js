@@ -95,19 +95,28 @@ const NovaRouter = {
     /**
      * Update UI based on route
      */
-    updateUI(route) {
-        // Show/hide back button
-        const backBtn = document.getElementById('backBtn');
-        const homeBtn = document.getElementById('homeBtn');
+   updateUI(route) {
+    // Show/hide back button
+    const backBtn = document.getElementById('backBtn');
+    const homeBtn = document.getElementById('homeBtn');
+    const introBtn = document.getElementById('introBtn');
+    
+    if (route === 'home') {
+        backBtn?.classList.add('hidden');
+        homeBtn?.classList.add('hidden');
+        introBtn?.classList.add('hidden');
+    } else {
+        backBtn?.classList.remove('hidden');
+        homeBtn?.classList.remove('hidden');
         
-        if (route === 'home') {
-            backBtn?.classList.add('hidden');
-            homeBtn?.classList.add('hidden');
+        // Show info icon only in note-master-refined
+        if (route === 'note-master-refined') {
+            introBtn?.classList.remove('hidden');
         } else {
-            backBtn?.classList.remove('hidden');
-            homeBtn?.classList.remove('hidden');
+            introBtn?.classList.add('hidden');
         }
-    },
+    }
+},
 
     /**
      * Register new route
