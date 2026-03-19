@@ -8,17 +8,35 @@ const NovaRouter = {
     'home': () => NovaApp.showHome(),
     'note-master': () => NoteMaster.init(),
    'note-master-refined': () => {
-    if (typeof NovaRepetition !== 'undefined') {
-        // Check if there's an existing session
-        const session = NovaStorage.get('current-session');
-        if (!session) {
-            NovaRepetition.startDailySession();
-        } else {
-            NovaRepetition.startSessionItem(0);
+    // Show info icon
+    const introBtn = document.getElementById('introBtn');
+    if (introBtn) {
+        introBtn.classList.remove('hidden');
+    }
+    
+    // Check if user has seen intro
+    const hasSeenIntro = NovaStorage.get('note-intro-seen');
+    
+    if (!hasSeenIntro) {
+        // First time - show 4-screen intro
+        NoteIntro.show();
+        // Add pulse animation to icon
+        if (introBtn) {
+            introBtn.classList.add('pulse');
         }
     } else {
-        console.error('NovaRepetition not loaded!');
-        alert('Refined system not available. Please reload the page.');
+        // Returning user - start session
+        if (typeof NovaRepetition !== 'undefined') {
+            const session = NovaStorage.get('current-session');
+            if (!session) {
+                NovaRepetition.startDailySession();
+            } else {
+                NovaRepetition.startSessionItem(0);
+            }
+        } else {
+            console.error('NovaRepetition not loaded!');
+            alert('Refined system not available. Please reload the page.');
+        }
     }
 },
     'settings': () => NovaApp.showSettings()
