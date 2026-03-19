@@ -5,7 +5,14 @@
 
 const NovaRouter = {
     routes: {
-    'home': () => NovaApp.showHome(),
+   'home': () => {
+    NovaApp.showHome();
+    // Hide info icon on home
+    const introBtn = document.getElementById('introBtn');
+    if (introBtn) {
+        introBtn.classList.add('hidden');
+    }
+},
     'note-master': () => NoteMaster.init(),
    'note-master-refined': () => {
     // Show info icon
