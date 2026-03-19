@@ -30,16 +30,26 @@
         <!-- Header -->
         <header id="header" class="header">
             <div class="header-left">
-                <button id="backBtn" class="back-btn hidden" onclick="NovaRouter.goBack()">
-                    ← Back
-                </button>
-                <button id="homeBtn" class="home-btn hidden" onclick="NovaRouter.navigate('home')">
-                    🏠
-                </button>
-                <div id="headerTitle" class="header-title">
-                    <span class="nova-logo">✨ Nova</span>
-                </div>
-            </div>
+    <button id="backBtn" class="back-btn hidden" onclick="NovaRouter.goBack()">
+        ← Back
+    </button>
+    <button id="homeBtn" class="home-btn hidden" onclick="NovaRouter.navigate('home')">
+        🏠
+    </button>
+    
+    <!-- NEW: Info Icon -->
+    <button id="introBtn" 
+            class="info-btn hidden" 
+            onclick="NoteIntro.showModal()"
+            title="What are notes?"
+            aria-label="Learn about note-taking">
+        ℹ️
+    </button>
+    
+    <div id="headerTitle" class="header-title">
+        <span class="nova-logo">✨ Nova</span>
+    </div>
+</div>
             <div class="header-right">
                 <div id="stats" class="stats">
                     <span id="streakDisplay" class="stat-item">🔥 <span id="streak">0</span></span>
