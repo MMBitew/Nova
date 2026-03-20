@@ -5,10 +5,49 @@
 
 const NovaRouter = {
     routes: {
-        'home': () => NovaApp.showHome(),
-        'note-master': () => NoteMaster.init(),
-        'settings': () => NovaApp.showSettings()
-    },
+   'home': () => {
+    NovaApp.showHome();
+    // Hide info icon on home
+    const introBtn = document.getElementById('introBtn');
+    if (introBtn) {
+        introBtn.classList.add('hidden');
+    }
+},
+    'note-master': () => NoteMaster.init(),
+   'note-master-refined': () => {
+    // Show info icon
+    const introBtn = document.getElementById('introBtn');
+    if (introBtn) {
+        introBtn.classList.remove('hidden');
+    }
+    
+    // Check if user has seen intro
+    const hasSeenIntro = NovaStorage.get('note-intro-seen');
+    
+    if (!hasSeenIntro) {
+        // First time - show 4-screen intro
+        NoteIntro.show();
+        // Add pulse animation to icon
+        if (introBtn) {
+            introBtn.classList.add('pulse');
+        }
+    } else {
+        // Returning user - start session
+        if (typeof NovaRepetition !== 'undefined') {
+            const session = NovaStorage.get('current-session');
+            if (!session) {
+                NovaRepetition.startDailySession();
+            } else {
+                NovaRepetition.startSessionItem(0);
+            }
+        } else {
+            console.error('NovaRepetition not loaded!');
+            alert('Refined system not available. Please reload the page.');
+        }
+    }
+},
+    'settings': () => NovaApp.showSettings()
+},
 
     currentRoute: null,
 
@@ -56,19 +95,28 @@ const NovaRouter = {
     /**
      * Update UI based on route
      */
-    updateUI(route) {
-        // Show/hide back button
-        const backBtn = document.getElementById('backBtn');
-        const homeBtn = document.getElementById('homeBtn');
+   updateUI(route) {
+    // Show/hide back button
+    const backBtn = document.getElementById('backBtn');
+    const homeBtn = document.getElementById('homeBtn');
+    const introBtn = document.getElementById('introBtn');
+    
+    if (route === 'home') {
+        backBtn?.classList.add('hidden');
+        homeBtn?.classList.add('hidden');
+        introBtn?.classList.add('hidden');
+    } else {
+        backBtn?.classList.remove('hidden');
+        homeBtn?.classList.remove('hidden');
         
-        if (route === 'home') {
-            backBtn?.classList.add('hidden');
-            homeBtn?.classList.add('hidden');
+        // Show info icon only in note-master-refined
+        if (route === 'note-master-refined') {
+            introBtn?.classList.remove('hidden');
         } else {
-            backBtn?.classList.remove('hidden');
-            homeBtn?.classList.remove('hidden');
+            introBtn?.classList.add('hidden');
         }
-    },
+    }
+},
 
     /**
      * Register new route
