@@ -1,0 +1,851 @@
+{
+  "conceptId": "bullets",
+  "lessonNumber": 4,
+  "title": "Bullets",
+  "introduce": {
+    "content": {
+      "icon": "•",
+      "title": "Bullets = Clear Lists",
+      "subtitle": "Organize info so it's easy to read",
+      "example": {
+        "text": "Instead of: 'Need milk bread eggs cheese'",
+        "highlight": "Shopping:\n• milk\n• bread\n• eggs\n• cheese",
+        "label": "(One item per line)"
+      },
+      "audio": "Bullets make clear lists. They organize information so it's easy to read. Instead of 'Need milk bread eggs cheese', write it as a list. Shopping, milk, bread, eggs, cheese. One item per line."
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Which is easier to read?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cats are soft they purr they are cute",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Hard to read! Try bullets",
+            "audio": "That's hard to read. Try using bullets."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Cats:\n• soft\n• purr\n• cute",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Yes! Bullets are clearer •",
+            "audio": "Yes! Bullets make it much clearer."
+          }
+        },
+        {
+          "id": "c",
+          "text": "soft purr cute",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What about them? Need the topic!",
+            "audio": "What about them? You need the topic."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Which is easier to read?"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Best format for this shopping list:",
+      "context": {
+        "text": "Need to buy apples bananas oranges"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Need to buy apples bananas oranges",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use bullets to organize!",
+            "audio": "Use bullets to organize the list."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Shopping:\n• apples\n• bananas\n• oranges",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Easy to read •",
+            "audio": "Perfect! That's easy to read."
+          }
+        },
+        {
+          "id": "c",
+          "text": "apples, bananas, oranges",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Bullets are clearer than commas!",
+            "audio": "Bullets are clearer than commas for lists."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best format for this shopping list: Need to buy apples bananas oranges"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "How should you write this list?",
+      "context": {
+        "text": "Morning routine: wake up brush teeth eat breakfast"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "wake up brush teeth eat breakfast",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Needs bullets for each step!",
+            "audio": "It needs bullets for each step."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Morning:\n• wake up\n• brush teeth\n• eat breakfast",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Great! Clear steps •",
+            "audio": "Great! The steps are clear now."
+          }
+        },
+        {
+          "id": "c",
+          "text": "Morning",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing all the steps!",
+            "audio": "You're missing all the steps."
+          }
+        }
+      ],
+      "audio": {
+        "question": "How should you write this list? Morning routine: wake up brush teeth eat breakfast"
+      }
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Best way to organize this:",
+      "context": {
+        "text": "Chores: clean room do dishes take out trash"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "clean room do dishes take out trash",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Make it a bullet list!",
+            "audio": "Make it a bullet list."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Chores:\n• clean room\n• do dishes\n• take out trash",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Each task is clear •",
+            "audio": "Perfect! Each task is clear."
+          }
+        },
+        {
+          "id": "c",
+          "text": "Chores",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What chores? Need the list!",
+            "audio": "What chores? You need the list."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best way to organize this: Chores, clean room do dishes take out trash"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Which format is best?",
+      "context": {
+        "text": "Pizza toppings I want: pepperoni mushrooms olives"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "pepperoni mushrooms olives",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use bullets!",
+            "audio": "Use bullets to organize them."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Toppings:\n• pepperoni\n• mushrooms\n• olives",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Yes! Clear list •",
+            "audio": "Yes! That's a clear list."
+          }
+        },
+        {
+          "id": "c",
+          "text": "pizza",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing the toppings!",
+            "audio": "You're missing the toppings."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Which format is best? Pizza toppings I want: pepperoni mushrooms olives"
+      }
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Best organization:",
+      "context": {
+        "text": "Things to pack: toothbrush clothes phone charger"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Things to pack: toothbrush clothes phone charger",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Hard to scan! Use bullets",
+            "audio": "That's hard to scan. Use bullets."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Pack:\n• toothbrush\n• clothes\n• phone charger",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Easy to check off •",
+            "audio": "Perfect! Easy to check off each item."
+          }
+        },
+        {
+          "id": "c",
+          "text": "toothbrush, clothes, charger",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Bullets are better than commas!",
+            "audio": "Bullets are better than commas for packing lists."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best organization: Things to pack, toothbrush clothes phone charger"
+      }
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Which is clearest?",
+      "context": {
+        "text": "Homework: math worksheet science reading chapter 4"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "math worksheet science reading chapter 4",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Confusing! Use bullets",
+            "audio": "That's confusing. Use bullets."
+          }
+        },
+        {
+          "id": "b",
+          "text": "HW:\n• math worksheet\n• science reading\n• chapter 4",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Great! Each assignment is clear •",
+            "audio": "Great! Each assignment is clear now."
+          }
+        },
+        {
+          "id": "c",
+          "text": "homework",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What homework?",
+            "audio": "What homework assignments?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Which is clearest? Homework: math worksheet science reading chapter 4"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Best way to organize by category:",
+      "context": {
+        "text": "Buy shampoo from pharmacy milk from dairy apples from produce"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Buy shampoo milk apples",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Group by store section!",
+            "audio": "Group items by store section."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Shopping:\n• Pharmacy: shampoo\n• Dairy: milk\n• Produce: apples",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Organized by section •",
+            "audio": "Perfect! That's organized by section."
+          }
+        },
+        {
+          "id": "c",
+          "text": "shampoo, milk, apples",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing the sections!",
+            "audio": "You're missing which section each item is in."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best way to organize by category: Buy shampoo from pharmacy milk from dairy apples from produce"
+      }
+    },
+    {
+      "id": "q9",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "How should this be organized?",
+      "context": {
+        "text": "Water cycle: evaporation condensation precipitation"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "evaporation condensation precipitation",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Make it a bullet list!",
+            "audio": "Make it a bullet list."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Water cycle:\n• evaporation\n• condensation\n• precipitation",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Great! Shows each step •",
+            "audio": "Great! That shows each step clearly."
+          }
+        },
+        {
+          "id": "c",
+          "text": "Water cycle",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing all the steps!",
+            "audio": "You're missing all the steps."
+          }
+        }
+      ],
+      "audio": {
+        "question": "How should this be organized? Water cycle: evaporation condensation precipitation"
+      }
+    },
+    {
+      "id": "q10",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Best format:",
+      "context": {
+        "text": "Job tasks: clock in check email help customers restock shelves"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "clock in check email help customers restock shelves",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use bullets for each task!",
+            "audio": "Use bullets for each task."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Work shift:\n• clock in\n• check email\n• help customers\n• restock shelves",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Clear sequence •",
+            "audio": "Perfect! That's a clear sequence."
+          }
+        },
+        {
+          "id": "c",
+          "text": "work tasks",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What tasks?",
+            "audio": "What are the specific tasks?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best format: Job tasks, clock in check email help customers restock shelves"
+      }
+    },
+    {
+      "id": "q11",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Which organization is best?",
+      "context": {
+        "text": "Study for test: review chapter 3 do practice problems check notes"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "review chapter 3 do practice problems check notes",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Make a checklist!",
+            "audio": "Make it a checklist with bullets."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Study plan:\n• review chapter 3\n• do practice problems\n• check notes",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! Easy to follow •",
+            "audio": "Excellent! That's easy to follow."
+          }
+        },
+        {
+          "id": "c",
+          "text": "study",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Study what? How?",
+            "audio": "Study what? How should you study?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Which organization is best? Study for test: review chapter 3 do practice problems check notes"
+      }
+    },
+    {
+      "id": "q12",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Best way to organize:",
+      "context": {
+        "text": "Party supplies: pizza soda cups plates music speaker decorations balloons"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "pizza soda cups plates music speaker decorations balloons",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Group by category!",
+            "audio": "Group items by category."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Party:\n• Food: pizza, soda\n• Supplies: cups, plates\n• Entertainment: music, speaker\n• Decorations: balloons",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Organized categories •",
+            "audio": "Perfect! You organized it into categories."
+          }
+        },
+        {
+          "id": "c",
+          "text": "party supplies",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What supplies?",
+            "audio": "What specific supplies?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best way to organize: Party supplies, pizza soda cups plates music speaker decorations balloons"
+      }
+    },
+    {
+      "id": "q13",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Which format is clearest?",
+      "context": {
+        "text": "Book report steps: read book write summary create poster practice presentation"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "read book write summary create poster practice presentation",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use numbered bullets!",
+            "audio": "Use numbered bullets to show the order."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Book report:\n1. read book\n2. write summary\n3. create poster\n4. practice presentation",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Great! Shows the order •",
+            "audio": "Great! That shows the order of steps."
+          }
+        },
+        {
+          "id": "c",
+          "text": "book report",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing all the steps!",
+            "audio": "You're missing all the steps."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Which format is clearest? Book report steps: read book write summary create poster practice presentation"
+      }
+    },
+    {
+      "id": "q14",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Best organization:",
+      "context": {
+        "text": "Trip packing: clothes toothbrush phone charger snacks water bottle camera"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "clothes toothbrush phone charger snacks water bottle camera",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Group by type!",
+            "audio": "Group items by type."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Packing:\n• Clothes & toiletries: clothes, toothbrush\n• Electronics: phone, charger, camera\n• Food: snacks, water bottle",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! Grouped smartly •",
+            "audio": "Excellent! You grouped them smartly."
+          }
+        },
+        {
+          "id": "c",
+          "text": "trip stuff",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What stuff?",
+            "audio": "What specific stuff?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best organization: Trip packing, clothes toothbrush phone charger snacks water bottle camera"
+      }
+    },
+    {
+      "id": "q15",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "How should this complex list be organized?",
+      "context": {
+        "text": "Science project: research topic find 3 sources write outline create experiment record data make poster practice presentation"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "research find sources write outline experiment data poster presentation",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Break into phases!",
+            "audio": "Break it into phases with sub-bullets."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Science project:\nResearch phase:\n  • research topic\n  • find 3 sources\n  • write outline\nExperiment phase:\n  • create experiment\n  • record data\nPresentation phase:\n  • make poster\n  • practice presentation",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Multi-level organization •",
+            "audio": "Perfect! You used multi-level organization."
+          }
+        },
+        {
+          "id": "c",
+          "text": "science project steps",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What steps?",
+            "audio": "What are the specific steps?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "How should this complex list be organized? Science project: research topic find 3 sources write outline create experiment record data make poster practice presentation"
+      }
+    },
+    {
+      "id": "q16",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Best way to organize class notes:",
+      "context": {
+        "text": "Cells have nucleus mitochondria membrane also plants have chloroplasts cell wall"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "nucleus mitochondria membrane chloroplasts cell wall",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Separate animal vs plant!",
+            "audio": "Separate animal cell parts from plant cell parts."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Cell parts:\nAll cells:\n  • nucleus\n  • mitochondria\n  • membrane\nPlant cells only:\n  • chloroplasts\n  • cell wall",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! Clear categories •",
+            "audio": "Excellent! You made clear categories."
+          }
+        },
+        {
+          "id": "c",
+          "text": "cells",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing all the info!",
+            "audio": "You're missing all the information."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best way to organize class notes: Cells have nucleus mitochondria membrane, also plants have chloroplasts cell wall"
+      }
+    },
+    {
+      "id": "q17",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "How to organize this budget:",
+      "context": {
+        "text": "Money: get paid $200 spend $50 food $30 gas $15 entertainment save $105"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$200 $50 $30 $15 $105",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Separate income vs expenses!",
+            "audio": "Separate income from expenses."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Budget:\nIncome:\n  • paycheck: $200\nExpenses:\n  • food: $50\n  • gas: $30\n  • entertainment: $15\nSavings:\n  • save: $105",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Clear budget •",
+            "audio": "Perfect! That's a clear budget."
+          }
+        },
+        {
+          "id": "c",
+          "text": "money stuff",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Need the details!",
+            "audio": "You need the money details."
+          }
+        }
+      ],
+      "audio": {
+        "question": "How to organize this budget: Money, get paid 200 dollars, spend 50 food, 30 gas, 15 entertainment, save 105"
+      }
+    },
+    {
+      "id": "q18",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Best organization for this event plan:",
+      "context": {
+        "text": "Birthday party Saturday: morning shop for supplies afternoon decorate setup food evening guests arrive 6pm eat cake 7pm games 8pm"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "shop decorate setup eat cake games",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Organize by time blocks!",
+            "audio": "Organize it by time blocks."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Saturday party:\nMorning:\n  • shop for supplies\nAfternoon:\n  • decorate\n  • setup food\nEvening:\n  • 6pm: guests arrive\n  • 7pm: eat cake\n  • 8pm: games",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! Timeline format •",
+            "audio": "Excellent! You created a timeline format."
+          }
+        },
+        {
+          "id": "c",
+          "text": "party",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing the whole schedule!",
+            "audio": "You're missing the whole schedule."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best organization for this event plan: Birthday party Saturday, morning shop for supplies, afternoon decorate setup food, evening guests arrive 6pm, eat cake 7pm, games 8pm"
+      }
+    },
+    {
+      "id": "q19",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "How to organize this job application checklist:",
+      "context": {
+        "text": "Job application: update resume write cover letter research company prepare for interview questions bring ID references outfit"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "resume cover letter research interview ID references outfit",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Group by before vs day of!",
+            "audio": "Group tasks by before interview versus day of interview."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Job prep:\nBefore interview:\n  • update resume\n  • write cover letter\n  • research company\n  • prepare for questions\nDay of interview:\n  • bring: ID, references\n  • wear: professional outfit",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Organized by timing •",
+            "audio": "Perfect! You organized it by timing."
+          }
+        },
+        {
+          "id": "c",
+          "text": "job stuff",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What job stuff?",
+            "audio": "What specific job preparation tasks?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "How to organize this job application checklist: Job application, update resume, write cover letter, research company, prepare for interview questions, bring ID references outfit"
+      }
+    },
+    {
+      "id": "q20",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Best way to organize complex study guide:",
+      "context": {
+        "text": "History test: Chapter 5 causes of WWI main battles key people Chapter 6 Treaty of Versailles effects on Europe also study dates practice essay questions"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "WWI causes battles people Treaty Europe dates essay",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Organize by chapter and topic!",
+            "audio": "Organize it by chapter and topic."
+          }
+        },
+        {
+          "id": "b",
+          "text": "History test prep:\nChapter 5 - WWI:\n  • causes\n  • main battles\n  • key people\nChapter 6 - Aftermath:\n  • Treaty of Versailles\n  • effects on Europe\nStudy tasks:\n  • memorize dates\n  • practice essay questions",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! Multi-level structure •",
+            "audio": "Excellent! You created a multi-level structure."
+          }
+        },
+        {
+          "id": "c",
+          "text": "history test",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing all the content!",
+            "audio": "You're missing all the content to study."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best way to organize complex study guide: History test, Chapter 5 causes of World War One, main battles, key people, Chapter 6 Treaty of Versailles, effects on Europe, also study dates, practice essay questions"
+      }
+    }
+  ],
+  "completion": {
+    "mastery": {
+      "message": "You've mastered bullet lists! •",
+      "xp": 75
+    },
+    "good": {
+      "message": "Great work on bullets!",
+      "xp": 50
+    },
+    "needsPractice": {
+      "message": "You're learning bullets!",
+      "xp": 25
+    }
+  }
+}

@@ -1,0 +1,854 @@
+{
+  "conceptId": "symbols",
+  "lessonNumber": 5,
+  "title": "Symbols",
+  "introduce": {
+    "content": {
+      "icon": "→",
+      "title": "Symbols = Fast Shortcuts",
+      "subtitle": "Use symbols instead of words",
+      "example": {
+        "text": "Instead of: 'Rain causes flooding'",
+        "highlight": "rain → flooding",
+        "label": "(→ means 'causes' or 'leads to')"
+      },
+      "audio": "Symbols are fast shortcuts. Use symbols instead of words. Instead of 'Rain causes flooding', write 'rain arrow flooding'. The arrow means 'causes' or 'leads to'."
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Which note is faster?",
+      "context": {
+        "text": "Rain causes flooding"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Rain causes flooding",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use → for 'causes'!",
+            "audio": "Use an arrow for the word 'causes'."
+          }
+        },
+        {
+          "id": "b",
+          "text": "rain → flooding",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Yes! → = causes →",
+            "audio": "Yes! The arrow means causes."
+          }
+        },
+        {
+          "id": "c",
+          "text": "flooding",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What causes it?",
+            "audio": "What causes the flooding?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Which note is faster for: Rain causes flooding"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Best note:",
+      "context": {
+        "text": "Photosynthesis means plants make food"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Photosynthesis means plants make food",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use = for 'means'!",
+            "audio": "Use an equals sign for the word 'means'."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Photosynthesis = plants make food",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! = means 'means' =",
+            "audio": "Perfect! The equals sign means 'means'."
+          }
+        },
+        {
+          "id": "c",
+          "text": "plants",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing the process!",
+            "audio": "You're missing the process name."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: Photosynthesis means plants make food"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Fastest note:",
+      "context": {
+        "text": "IMPORTANT: Test on Friday"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "IMPORTANT Test on Friday",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use ★ for important!",
+            "audio": "Use a star for important."
+          }
+        },
+        {
+          "id": "b",
+          "text": "★ Test Friday",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Great! ★ = important ★",
+            "audio": "Great! The star means important."
+          }
+        },
+        {
+          "id": "c",
+          "text": "Friday",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What's on Friday?",
+            "audio": "What's on Friday?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Fastest note for: IMPORTANT, Test on Friday"
+      }
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Best way to write this:",
+      "context": {
+        "text": "Practice canceled tomorrow"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Practice canceled tomorrow",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use X for canceled!",
+            "audio": "Use an X for canceled."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Practice X tomorrow",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Yes! X = canceled or no →",
+            "audio": "Yes! X means canceled or no."
+          }
+        },
+        {
+          "id": "c",
+          "text": "X",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What is canceled?",
+            "audio": "What is canceled?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best way to write this: Practice canceled tomorrow"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Shortest note:",
+      "context": {
+        "text": "Lunch includes sandwich and chips and drink"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "sandwich and chips and drink",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use + for 'and'!",
+            "audio": "Use a plus sign for the word 'and'."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Lunch: sandwich + chips + drink",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! + = and +",
+            "audio": "Perfect! The plus sign means 'and'."
+          }
+        },
+        {
+          "id": "c",
+          "text": "lunch",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What's for lunch?",
+            "audio": "What's included in lunch?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest note for: Lunch includes sandwich and chips and drink"
+      }
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Best note:",
+      "context": {
+        "text": "Not sure if homework is due Monday or Tuesday"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Not sure homework due Monday or Tuesday",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use ? for 'not sure'!",
+            "audio": "Use a question mark for 'not sure'."
+          }
+        },
+        {
+          "id": "b",
+          "text": "HW due Mon/Tues ?",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Great! ? = unsure ?",
+            "audio": "Great! The question mark means unsure."
+          }
+        },
+        {
+          "id": "c",
+          "text": "homework",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "When is it due?",
+            "audio": "When is the homework due?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: Not sure if homework is due Monday or Tuesday"
+      }
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Fastest way to write:",
+      "context": {
+        "text": "Meeting at school at 3pm"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Meeting at school at 3pm",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use @ for 'at'!",
+            "audio": "Use the at symbol for the word 'at'."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Meeting @ school @ 3pm",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Yes! @ = at @",
+            "audio": "Yes! The at symbol means 'at'."
+          }
+        },
+        {
+          "id": "c",
+          "text": "3pm",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What's at 3pm? Where?",
+            "audio": "What's at 3pm and where?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Fastest way to write: Meeting at school at 3pm"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Best note:",
+      "context": {
+        "text": "Studying improves grades"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Studying improves grades",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use → to show cause!",
+            "audio": "Use an arrow to show cause and effect."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Study → better grades",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Shows cause/effect →",
+            "audio": "Perfect! That shows cause and effect."
+          }
+        },
+        {
+          "id": "c",
+          "text": "grades",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What improves them?",
+            "audio": "What improves the grades?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: Studying improves grades"
+      }
+    },
+    {
+      "id": "q9",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Shortest note:",
+      "context": {
+        "text": "Remember to bring ID to appointment"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Remember bring ID to appointment",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use ★ and @ symbols!",
+            "audio": "Use a star for important and at symbol."
+          }
+        },
+        {
+          "id": "b",
+          "text": "★ Bring ID @ appt",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! Two symbols ★@",
+            "audio": "Excellent! You used two symbols."
+          }
+        },
+        {
+          "id": "c",
+          "text": "ID",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Bring it where?",
+            "audio": "Bring it where?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest note for: Remember to bring ID to appointment"
+      }
+    },
+    {
+      "id": "q10",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Best way to write:",
+      "context": {
+        "text": "Buy apples and bananas and oranges"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Buy apples bananas oranges",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use + to connect items!",
+            "audio": "Use plus signs to connect the items."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Buy: apples + bananas + oranges",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Great! Clean list +",
+            "audio": "Great! That's a clean list with plus signs."
+          }
+        },
+        {
+          "id": "c",
+          "text": "fruit",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Which fruits?",
+            "audio": "Which specific fruits?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best way to write: Buy apples and bananas and oranges"
+      }
+    },
+    {
+      "id": "q11",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Fastest note:",
+      "context": {
+        "text": "No phones allowed in class"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "No phones allowed in class",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use X for 'no'!",
+            "audio": "Use an X for the word 'no'."
+          }
+        },
+        {
+          "id": "b",
+          "text": "X phones in class",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Yes! X = no or don't →",
+            "audio": "Yes! X means no or don't."
+          }
+        },
+        {
+          "id": "c",
+          "text": "class",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What about class?",
+            "audio": "What's the rule about class?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Fastest note for: No phones allowed in class"
+      }
+    },
+    {
+      "id": "q12",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Best note:",
+      "context": {
+        "text": "Democracy means government by the people"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Democracy means government by the people",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use = for definition!",
+            "audio": "Use an equals sign for definitions."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Democracy = govt by people",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Definition format =",
+            "audio": "Perfect! That's the definition format."
+          }
+        },
+        {
+          "id": "c",
+          "text": "government",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What type of government?",
+            "audio": "What type of government?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: Democracy means government by the people"
+      }
+    },
+    {
+      "id": "q13",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Shortest note:",
+      "context": {
+        "text": "First read then answer questions"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "First read then answer questions",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use → to show sequence!",
+            "audio": "Use an arrow to show the sequence."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Read → answer Qs",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Great! Shows order →",
+            "audio": "Great! That shows the order."
+          }
+        },
+        {
+          "id": "c",
+          "text": "read",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What comes after reading?",
+            "audio": "What comes after reading?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest note for: First read then answer questions"
+      }
+    },
+    {
+      "id": "q14",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Best way to write:",
+      "context": {
+        "text": "Maybe going to concert, not sure yet"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Maybe going to concert not sure",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use ? for uncertainty!",
+            "audio": "Use a question mark for uncertainty."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Concert ? (not sure)",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Shows uncertainty ?",
+            "audio": "Perfect! That shows you're uncertain."
+          }
+        },
+        {
+          "id": "c",
+          "text": "concert",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Are you going or not?",
+            "audio": "Are you going to the concert or not?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best way to write: Maybe going to concert, not sure yet"
+      }
+    },
+    {
+      "id": "q15",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Shortest complete note:",
+      "context": {
+        "text": "Sunlight and water create plant energy through photosynthesis"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Sunlight and water create plant energy through photosynthesis",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use + and → symbols!",
+            "audio": "Use plus and arrow symbols."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Sunlight + water → plant energy (photosynthesis)",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! Multiple symbols +→",
+            "audio": "Excellent! You used multiple symbols."
+          }
+        },
+        {
+          "id": "c",
+          "text": "photosynthesis",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing what goes in and out!",
+            "audio": "You're missing what goes in and what comes out."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest complete note for: Sunlight and water create plant energy through photosynthesis"
+      }
+    },
+    {
+      "id": "q16",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Best note:",
+      "context": {
+        "text": "CRITICAL: Submit form by Friday or lose your spot"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "CRITICAL Submit form by Friday or lose spot",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use ★ → and X symbols!",
+            "audio": "Use star, arrow, and X symbols."
+          }
+        },
+        {
+          "id": "b",
+          "text": "★ Submit form by Fri → or X spot",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Three symbols ★→X",
+            "audio": "Perfect! You used three symbols."
+          }
+        },
+        {
+          "id": "c",
+          "text": "Friday",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What happens on Friday?",
+            "audio": "What happens on Friday?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: CRITICAL, Submit form by Friday or lose your spot"
+      }
+    },
+    {
+      "id": "q17",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Shortest note:",
+      "context": {
+        "text": "If it rains practice is canceled, if sunny we meet at field"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "rain canceled sunny meet field",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use → X @ symbols!",
+            "audio": "Use arrow, X, and at symbols to show the conditions."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Rain → X practice | Sunny → meet @ field",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! Shows both options |",
+            "audio": "Excellent! You showed both options clearly."
+          }
+        },
+        {
+          "id": "c",
+          "text": "practice",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "When and where?",
+            "audio": "When is practice and where?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest note for: If it rains practice is canceled, if sunny we meet at field"
+      }
+    },
+    {
+      "id": "q18",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Best way to organize:",
+      "context": {
+        "text": "$50 budget: $20 food plus $15 gas equals $35 spent, $15 left"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$50 budget $20 food $15 gas $35 spent $15 left",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use + = → symbols!",
+            "audio": "Use plus, equals, and arrow symbols to show the math."
+          }
+        },
+        {
+          "id": "b",
+          "text": "$50: food $20 + gas $15 = $35 → $15 left",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Clear budget math +=→",
+            "audio": "Perfect! That shows clear budget math."
+          }
+        },
+        {
+          "id": "c",
+          "text": "$50",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "How was it spent?",
+            "audio": "How was the fifty dollars spent?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best way to organize: 50 dollar budget, 20 food plus 15 gas equals 35 spent, 15 left"
+      }
+    },
+    {
+      "id": "q19",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Shortest complete note:",
+      "context": {
+        "text": "Water cycle: evaporation leads to clouds, clouds lead to rain, rain goes to ocean"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Water cycle evaporation clouds rain ocean",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use → to show the flow!",
+            "audio": "Use arrows to show how it flows."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Water cycle: evaporation → clouds → rain → ocean",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! Shows the cycle →",
+            "audio": "Excellent! That shows the complete cycle."
+          }
+        },
+        {
+          "id": "c",
+          "text": "water",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing the whole cycle!",
+            "audio": "You're missing the whole cycle."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest complete note for: Water cycle, evaporation leads to clouds, clouds lead to rain, rain goes to ocean"
+      }
+    },
+    {
+      "id": "q20",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Best way to write:",
+      "context": {
+        "text": "IMPORTANT: Party at 7pm, bring food and drinks, RSVP required, maybe bring speaker"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "IMPORTANT Party 7pm bring food drinks RSVP maybe speaker",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use ★ @ + ? symbols!",
+            "audio": "Use star, at, plus, and question mark symbols."
+          }
+        },
+        {
+          "id": "b",
+          "text": "★ Party @ 7pm: bring food + drinks, RSVP req'd, speaker ?",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! All key symbols ★@+?",
+            "audio": "Perfect! You used all the key symbols."
+          }
+        },
+        {
+          "id": "c",
+          "text": "party 7pm",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing what to bring!",
+            "audio": "You're missing what to bring and important details."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best way to write: IMPORTANT, Party at 7pm, bring food and drinks, RSVP required, maybe bring speaker"
+      }
+    }
+  ],
+  "completion": {
+    "mastery": {
+      "message": "You've mastered symbols! →",
+      "xp": 75
+    },
+    "good": {
+      "message": "Great work on symbols!",
+      "xp": 50
+    },
+    "needsPractice": {
+      "message": "You're learning symbols!",
+      "xp": 25
+    }
+  }
+}

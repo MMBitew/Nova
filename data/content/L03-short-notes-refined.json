@@ -1,0 +1,854 @@
+{
+  "conceptId": "short-notes",
+  "lessonNumber": 3,
+  "title": "Short Notes",
+  "introduce": {
+    "content": {
+      "icon": "✂️",
+      "title": "Short Notes = Better Notes",
+      "subtitle": "Shorter is faster and easier to read",
+      "example": {
+        "text": "Instead of: 'The dog ran very fast down the street'",
+        "highlight": "Dog ran fast down street",
+        "label": "(Skip 'the' and 'very')"
+      },
+      "audio": "Short notes are better notes. Shorter is faster and easier to read. Instead of 'The dog ran very fast down the street', write 'Dog ran fast down street'. Skip words like 'the' and 'very'."
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Which note is best?",
+      "context": {
+        "text": "Dogs are popular pets"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Dogs are popular pets",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Too long! Make it shorter",
+            "audio": "That's too long. Try making it shorter."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Dogs = popular pets",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Short but complete ✂️",
+            "audio": "Correct! That's a perfect short note."
+          }
+        },
+        {
+          "id": "c",
+          "text": "dogs",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Too short! Missing the point",
+            "audio": "That's too short. You lost the meaning."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Which note is best for: Dogs are popular pets"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Best way to write this note:",
+      "context": {
+        "text": "Pizza costs $15"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Pizza costs fifteen dollars",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use the number! Faster to write",
+            "audio": "Use the number symbol. It's faster."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Pizza $15",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Yes! Short and clear ✂️",
+            "audio": "Yes! That's short and clear."
+          }
+        },
+        {
+          "id": "c",
+          "text": "$15",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What costs $15? Need that info!",
+            "audio": "What costs fifteen dollars? You need that information."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best way to write this note: Pizza costs fifteen dollars"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Shortest good note:",
+      "context": {
+        "text": "Test on Friday"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "There is a test on Friday",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Skip 'There is'!",
+            "audio": "Skip the words 'there is'."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Test Fri",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Super short ✂️",
+            "audio": "Perfect! That's super short."
+          }
+        },
+        {
+          "id": "c",
+          "text": "Fri",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What's on Friday? Need that!",
+            "audio": "What's on Friday? You need that information."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest good note for: Test on Friday"
+      }
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Best note:",
+      "context": {
+        "text": "Homework page 42"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "The homework is on page 42",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Too many extra words!",
+            "audio": "That has too many extra words."
+          }
+        },
+        {
+          "id": "b",
+          "text": "HW p.42",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Great! Used abbreviations ✂️",
+            "audio": "Great! You used abbreviations."
+          }
+        },
+        {
+          "id": "c",
+          "text": "42",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Page 42 of what? Missing info!",
+            "audio": "Page 42 of what? You're missing information."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: Homework page 42"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Shortest note:",
+      "context": {
+        "text": "Mom said call her"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "My mom said I should call her",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Way too long!",
+            "audio": "That's way too long."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Call Mom",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Just the action ✂️",
+            "audio": "Perfect! Just the action you need to take."
+          }
+        },
+        {
+          "id": "c",
+          "text": "call",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Call who? Need that!",
+            "audio": "Call who? You need that information."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest note for: Mom said call her"
+      }
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Best note:",
+      "context": {
+        "text": "Meeting at 3 PM"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "The meeting is at 3 PM today",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Drop 'The' and 'is'!",
+            "audio": "Drop the words 'The' and 'is'."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Meeting 3pm",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Yes! Quick and clear ✂️",
+            "audio": "Yes! That's quick and clear."
+          }
+        },
+        {
+          "id": "c",
+          "text": "3pm",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What's at 3pm?",
+            "audio": "What's at 3 PM?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: Meeting at 3 PM"
+      }
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "prompt": "Shortest good note:",
+      "context": {
+        "text": "Buy milk and eggs"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "I need to buy milk and eggs",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Skip 'I need to'!",
+            "audio": "Skip the words 'I need to'."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Buy: milk, eggs",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Great! Used a colon ✂️",
+            "audio": "Great! You used a colon to organize it."
+          }
+        },
+        {
+          "id": "c",
+          "text": "milk eggs",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What about them? Buy? Avoid?",
+            "audio": "What about milk and eggs? Buy them? Avoid them?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest good note for: Buy milk and eggs"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Best note:",
+      "context": {
+        "text": "The Amazon rainforest has many animals"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "The Amazon rainforest has many animals",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use symbols! → means 'has'",
+            "audio": "Try using symbols. An arrow can mean 'has'."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Amazon rainforest → many animals",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Arrow = 'has' ✂️",
+            "audio": "Perfect! The arrow means 'has'."
+          }
+        },
+        {
+          "id": "c",
+          "text": "animals",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Where? Missing location!",
+            "audio": "Where are the animals? You're missing the location."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: The Amazon rainforest has many animals"
+      }
+    },
+    {
+      "id": "q9",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Shortest note:",
+      "context": {
+        "text": "Basketball practice canceled tomorrow"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Basketball practice is canceled tomorrow",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use X for canceled!",
+            "audio": "Use the X symbol for canceled."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Basketball practice X tomorrow",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Yes! X = canceled ✂️",
+            "audio": "Yes! X means canceled."
+          }
+        },
+        {
+          "id": "c",
+          "text": "X tomorrow",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "WHAT is canceled?",
+            "audio": "What is canceled tomorrow?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest note for: Basketball practice canceled tomorrow"
+      }
+    },
+    {
+      "id": "q10",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Best note:",
+      "context": {
+        "text": "Assignment due next Monday"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "The assignment is due next Monday",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Too long! Abbreviate!",
+            "audio": "That's too long. Try abbreviating."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Assignment due Mon",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Great! Mon = Monday ✂️",
+            "audio": "Great! Mon is short for Monday."
+          }
+        },
+        {
+          "id": "c",
+          "text": "Mon",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What's on Monday?",
+            "audio": "What's on Monday?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: Assignment due next Monday"
+      }
+    },
+    {
+      "id": "q11",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Shortest note:",
+      "context": {
+        "text": "Doctor appointment at 2:30"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "I have a doctor appointment at 2:30",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use 'Dr' for doctor!",
+            "audio": "Use the abbreviation Dr for doctor."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Dr appt 2:30",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Two abbreviations ✂️",
+            "audio": "Perfect! You used two abbreviations."
+          }
+        },
+        {
+          "id": "c",
+          "text": "2:30",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What's at 2:30?",
+            "audio": "What's at 2:30?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest note for: Doctor appointment at 2:30"
+      }
+    },
+    {
+      "id": "q12",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Best note:",
+      "context": {
+        "text": "Chapter 5 pages 100-125"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Read chapter 5 pages 100 through 125",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Abbreviate! Ch and p.",
+            "audio": "Abbreviate! Use Ch for chapter and p for pages."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Ch 5: p.100-125",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! Clean format ✂️",
+            "audio": "Excellent! That's a clean format."
+          }
+        },
+        {
+          "id": "c",
+          "text": "100-125",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Pages of what chapter?",
+            "audio": "Pages of what chapter?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: Chapter 5 pages 100 through 125"
+      }
+    },
+    {
+      "id": "q13",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Shortest note:",
+      "context": {
+        "text": "Bring calculator to math class"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Remember to bring calculator to math class",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Skip 'Remember to'!",
+            "audio": "Skip the words 'Remember to'."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Bring calc to math",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Yes! Calc = calculator ✂️",
+            "audio": "Yes! Calc is short for calculator."
+          }
+        },
+        {
+          "id": "c",
+          "text": "calc",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Bring it where?",
+            "audio": "Bring it where?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest note for: Bring calculator to math class"
+      }
+    },
+    {
+      "id": "q14",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "prompt": "Best note:",
+      "context": {
+        "text": "Study for history test Wednesday"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "I need to study for the history test on Wednesday",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Way too long!",
+            "audio": "That's way too long."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Study history test Wed",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Great! Wed = Wednesday ✂️",
+            "audio": "Great! Wed is short for Wednesday."
+          }
+        },
+        {
+          "id": "c",
+          "text": "Wed",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Do what on Wednesday?",
+            "audio": "Do what on Wednesday?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: Study for history test Wednesday"
+      }
+    },
+    {
+      "id": "q15",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Shortest complete note:",
+      "context": {
+        "text": "The water cycle includes evaporation, condensation, and precipitation"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "The water cycle includes evaporation, condensation, and precipitation",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use arrows to show the flow!",
+            "audio": "Use arrows to show how it flows."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Water cycle: evaporation → condensation → precipitation",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Shows the process ✂️",
+            "audio": "Perfect! That shows the process clearly."
+          }
+        },
+        {
+          "id": "c",
+          "text": "water cycle",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing all the steps!",
+            "audio": "You're missing all the steps."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest complete note for: The water cycle includes evaporation, condensation, and precipitation"
+      }
+    },
+    {
+      "id": "q16",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Best note:",
+      "context": {
+        "text": "Martin Luther King Jr. gave his famous speech in 1963"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Martin Luther King Junior gave his famous speech in 1963",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use MLK abbreviation!",
+            "audio": "Use the abbreviation MLK."
+          }
+        },
+        {
+          "id": "b",
+          "text": "MLK famous speech 1963",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! Super compact ✂️",
+            "audio": "Excellent! That's super compact."
+          }
+        },
+        {
+          "id": "c",
+          "text": "1963",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "What happened in 1963?",
+            "audio": "What happened in 1963?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: Martin Luther King Junior gave his famous speech in 1963"
+      }
+    },
+    {
+      "id": "q17",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Shortest note:",
+      "context": {
+        "text": "Photosynthesis uses sunlight to make energy for plants"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Photosynthesis uses sunlight to make energy for plants",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use arrows and parentheses!",
+            "audio": "Try using arrows and parentheses."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Photosynthesis: sunlight → energy (plants)",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Compact and clear ✂️",
+            "audio": "Perfect! That's compact and clear."
+          }
+        },
+        {
+          "id": "c",
+          "text": "sunlight energy",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing the process name!",
+            "audio": "You're missing the process name."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest note for: Photosynthesis uses sunlight to make energy for plants"
+      }
+    },
+    {
+      "id": "q18",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Best note:",
+      "context": {
+        "text": "The concert tickets cost $50 each, doors open at 7"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Concert tickets are $50 each and doors open at 7",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Abbreviate! Use 'tix' and 'ea'",
+            "audio": "Abbreviate! Use tix for tickets and ea for each."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Concert tix $50 ea, doors 7pm",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! Multiple shortcuts ✂️",
+            "audio": "Excellent! You used multiple shortcuts."
+          }
+        },
+        {
+          "id": "c",
+          "text": "$50",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing when and what!",
+            "audio": "You're missing when and what costs fifty dollars."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: The concert tickets cost fifty dollars each, doors open at 7"
+      }
+    },
+    {
+      "id": "q19",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Shortest note:",
+      "context": {
+        "text": "Return policy: 30 days with receipt for full refund"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "The return policy is 30 days with receipt for full refund",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Use symbols! w/ = with",
+            "audio": "Use symbols! w slash means with."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Return: 30 days w/ receipt = full refund",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Perfect! Symbols + abbreviations ✂️",
+            "audio": "Perfect! You used symbols and abbreviations."
+          }
+        },
+        {
+          "id": "c",
+          "text": "30 days",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "30 days for what?",
+            "audio": "30 days for what?"
+          }
+        }
+      ],
+      "audio": {
+        "question": "Shortest note for: Return policy, 30 days with receipt for full refund"
+      }
+    },
+    {
+      "id": "q20",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "prompt": "Best note:",
+      "context": {
+        "text": "Assignment: Read chapters 3-5, answer questions 1-10, due Friday"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Assignment is to read chapters 3 through 5, answer questions 1 through 10, and it is due Friday",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Way too long! Abbreviate!",
+            "audio": "That's way too long! Try abbreviating."
+          }
+        },
+        {
+          "id": "b",
+          "text": "Read Ch 3-5, Q 1-10, due Fri",
+          "isCorrect": true,
+          "feedback": {
+            "correct": "Excellent! All the key info ✂️",
+            "audio": "Excellent! You kept all the key information."
+          }
+        },
+        {
+          "id": "c",
+          "text": "Ch 3-5",
+          "isCorrect": false,
+          "feedback": {
+            "incorrect": "Missing questions and due date!",
+            "audio": "You're missing the questions and due date."
+          }
+        }
+      ],
+      "audio": {
+        "question": "Best note for: Assignment, Read chapters 3 through 5, answer questions 1 through 10, due Friday"
+      }
+    }
+  ],
+  "completion": {
+    "mastery": {
+      "message": "You've mastered short notes! ✂️",
+      "xp": 75
+    },
+    "good": {
+      "message": "Great work on short notes!",
+      "xp": 50
+    },
+    "needsPractice": {
+      "message": "You're learning short notes!",
+      "xp": 25
+    }
+  }
+}
